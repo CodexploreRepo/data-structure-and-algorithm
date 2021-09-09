@@ -8,7 +8,9 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 - [2. Sorting](#2-sorting)
   - [2.1. Insertion Sort](#21-insertion-sort)
   - [2.2. Merge Sort](#22-merge-sort)
-
+- [3. Analysis of Algorithm](#3-analysis-of-algorithm)
+  - [3.1. Types of Analysis](#31-types-of-analysis) 
+  - [3.2. Asymptotic Order of Growth](#32-asymptotic-order-of-growth)
 
 # Part A. Algorithm
 # 1. Recursion
@@ -62,6 +64,25 @@ def merge(A, lower, mid, upper):
             A[k] = tmpR[j]
             j+=1
 ```
+# 3. Analysis of Algorithm
+## 3.1. Types of Analysis
+- **Worst Case**:
+- **Average Case**: difficult to compute as need to find combination of inputs and then take the average of run time
+- **Amortized Case**: sampling with replacement
 
+## 3.2. Asymptotic Order of Growth
+- **Asymptotic Order of Growth**: know how the function behaves as the input gets larger, towards infinity (i.e: **in the limit**)
+  - For example: the  blue algo is scale better then the red on 
+  <p align="center"><img height="250" alt="Screenshot 2021-09-09 at 14 48 29" src="https://user-images.githubusercontent.com/64508435/132636684-19a33b59-816f-4c33-b693-fbfdbe9ce37a.png"></p>
+### 3.2.1. Upper Bound (Big O) Notation
+<img width="620" alt="Screenshot 2021-09-09 at 14 56 21" src="https://user-images.githubusercontent.com/64508435/132637675-0cc9eb14-91cc-4500-9549-fb8a45c69a8e.png">
+### 3.2.2. Lower Bound (Omega) Notation
+### 3.2.3. Tight Asymptotic (Theta) Bound
+<p align="center"><img height="250" alt="Screenshot 2021-09-09 at 14 53 59" src="https://user-images.githubusercontent.com/64508435/132637355-4fd119ee-1662-4bd4-bbc5-b062bfb39206.png"></p>
+#### Exercise of Big O, Omega and Theta
+<img width="620" alt="Screenshot 2021-09-09 at 14 58 20" src="https://user-images.githubusercontent.com/64508435/132637915-d7d0b4b1-d13c-45ec-8116-1eef131045a7.png">
 
+- Determine which relationship is correct and briefly explain why
+a) 
+b) 
 [(Back to top)](#table-of-contents)
