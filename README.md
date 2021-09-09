@@ -111,15 +111,20 @@ def merge(A, lower, mid, upper):
 ### 3.3.2. Recurrence
 - Recurrence describes a function `T(n)` in terms of its values on smaller inputs `T(m)`, where m < n
 - There are 3 ways to solve Recurrence
-#### Method 1. Substitution method
-
-#### Method 2. Recursion tree method
+#### Method 1. Substitution Method
+#### Method 2. Recursion Tree Method
 <p float="left">
-  <img height="400" src="https://user-images.githubusercontent.com/64508435/132649906-196183de-a017-4d2e-be16-82ac00d48468.jpg"  width="50%">
+  <img src="https://user-images.githubusercontent.com/64508435/132649906-196183de-a017-4d2e-be16-82ac00d48468.jpg"  width="50%">
   &nbsp; &nbsp; &nbsp; &nbsp;
-  <img height="300" src="https://user-images.githubusercontent.com/64508435/132649922-c6929055-3f10-4c20-80e5-dc2e2c1126f1.jpg" width="45%">
+  <img src="https://user-images.githubusercontent.com/64508435/132649922-c6929055-3f10-4c20-80e5-dc2e2c1126f1.jpg" width="45%">
+</p>
+
+#### Method 3. Master Theorem Method
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/64508435/132654625-452f8168-71d3-4277-ab96-3edf16585707.png"  width="50%">
+  &nbsp; &nbsp; &nbsp; &nbsp;
+  <img src="https://user-images.githubusercontent.com/64508435/132654268-1dd1425f-2387-4096-9551-760b9840612c.png" width="45%">
 </p>
 
 
-#### Method 3. Master method
 [(Back to top)](#table-of-contents)
