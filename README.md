@@ -74,15 +74,19 @@ def merge(A, lower, mid, upper):
 - **Asymptotic Order of Growth**: know how the function behaves as the input gets larger, towards infinity (i.e: **in the limit**)
   - For example: the  blue algo is scale better then the red on 
   <p align="center"><img height="250" alt="Screenshot 2021-09-09 at 14 48 29" src="https://user-images.githubusercontent.com/64508435/132636684-19a33b59-816f-4c33-b693-fbfdbe9ce37a.png"></p>
+  
 ### 3.2.1. Upper Bound (Big O) Notation
 <img width="620" alt="Screenshot 2021-09-09 at 14 56 21" src="https://user-images.githubusercontent.com/64508435/132637675-0cc9eb14-91cc-4500-9549-fb8a45c69a8e.png">
+- n*log(n) = `O(n^(1.5)) = O(n*sqrt(n))`, since log is growth slower than sqrt(n), so `n*log(n)` will be upper bounded by `n*sqrt(n)`
 ### 3.2.2. Lower Bound (Omega) Notation
 ### 3.2.3. Tight Asymptotic (Theta) Bound
 <p align="center"><img height="250" alt="Screenshot 2021-09-09 at 14 53 59" src="https://user-images.githubusercontent.com/64508435/132637355-4fd119ee-1662-4bd4-bbc5-b062bfb39206.png"></p>
-#### Exercise of Big O, Omega and Theta
-<img width="620" alt="Screenshot 2021-09-09 at 14 58 20" src="https://user-images.githubusercontent.com/64508435/132637915-d7d0b4b1-d13c-45ec-8116-1eef131045a7.png">
 
+#### Exercise of Big O, Omega and Theta
 - Determine which relationship is correct and briefly explain why
-a) 
-b) 
+<p align="center"><img height="200" alt="Screenshot 2021-09-09 at 15 00 56" src="https://user-images.githubusercontent.com/64508435/132638284-705b69be-749a-4d76-8132-87b5f6a5a3ab.png"></p>
+
+a. 
+b.
+
 [(Back to top)](#table-of-contents)
