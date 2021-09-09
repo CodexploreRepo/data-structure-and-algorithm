@@ -126,5 +126,11 @@ def merge(A, lower, mid, upper):
   <img src="https://user-images.githubusercontent.com/64508435/132654268-1dd1425f-2387-4096-9551-760b9840612c.png" width="45%">
 </p>
 
+- **Example of Master Theorem:**
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/64508435/132659603-f95e2a8b-2e7e-4beb-993f-9e5ec7fea23d.png"  width="50%">
+  &nbsp; &nbsp; &nbsp; &nbsp;
+  <img src="https://user-images.githubusercontent.com/64508435/132659695-3c2c14c2-7edd-4109-b8e9-b4cde4cc19d0.jpg" width="45%">
+</p>
 
 [(Back to top)](#table-of-contents)
