@@ -7,6 +7,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 - [1. Recursion](#1-recursion) 
 - [2. Sorting](#2-sorting)
   - [2.1. Insertion Sort](#21-insertion-sort)
+  - [2.2. Merge Sort](#22-merge-sort)
 
 
 # Part A. Algorithm
