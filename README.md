@@ -11,6 +11,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 - [3. Analysis of Algorithm](#3-analysis-of-algorithm)
   - [3.1. Types of Analysis](#31-types-of-analysis) 
   - [3.2. Asymptotic Order of Growth](#32-asymptotic-order-of-growth)
+  - [3.3. Recurrence](#33-recurrence)
 
 # Part A. Algorithm
 # 1. Recursion
@@ -100,4 +101,25 @@ def merge(A, lower, mid, upper):
 - g. f(n) = O(g(n))
 - h. f(n) = O(g(n))
 
+## 3.3. Recurrence
+### 3.3.1 Divide and Conquer
+- Motivation: **Divide and Conquer** Break a problem of size n into smaller problems such that by solving the smaller problems, we can construct a solution the entire problem:
+1) Divide
+2) Solve each of the smaller problems
+3) Combine solutions
+
+### 3.3.2. Recurrence
+- Recurrence describes a function `T(n)` in terms of its values on smaller inputs `T(m)`, where m < n
+- There are 3 ways to solve Recurrence
+#### Method 1. Substitution method
+
+#### Method 2. Recursion tree method
+<p float="left">
+  <img height="400" src="https://user-images.githubusercontent.com/64508435/132649906-196183de-a017-4d2e-be16-82ac00d48468.jpg"  width="50%">
+  &nbsp; &nbsp; &nbsp; &nbsp;
+  <img height="300" src="https://user-images.githubusercontent.com/64508435/132649922-c6929055-3f10-4c20-80e5-dc2e2c1126f1.jpg" width="45%">
+</p>
+
+
+#### Method 3. Master method
 [(Back to top)](#table-of-contents)
