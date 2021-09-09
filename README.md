@@ -37,7 +37,7 @@ def merge_sort(A,lower, upper):
         merge_sort(A, mid + 1, upper)
         merge(A, lower, mid, upper)
 ```
-- For the merge function, we will create 2 copy of `A[lower, mid]` and `A[mid+1, upper` to `tmpL` and `tmpR` and start to sort back
+- For the merge function, we will create 2 copy of `A[lower, mid]` and `A[mid+1, upper]` to `tmpL` and `tmpR` and start to sort back
 - Need to add the stopper `float("inf")` to the end of both `tmpL` and `tmpR`
 ```Python
 def merge(A, lower, mid, upper):
