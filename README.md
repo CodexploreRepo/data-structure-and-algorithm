@@ -91,7 +91,13 @@ def merge(A, lower, mid, upper):
 - Determine which relationship is correct and briefly explain why
 <p align="center"><img height="200" alt="Screenshot 2021-09-09 at 15 00 56" src="https://user-images.githubusercontent.com/64508435/132638284-705b69be-749a-4d76-8132-87b5f6a5a3ab.png"></p>
 
-- a. f(n) = log(n^2) = 2log(n), so **f(n) = Theta(g(n))** [Remember]
+- a. f(n) = log(n^2) = 2log(n), so **f(n) = Theta(g(n))**
 - b. g(n) = log(n^2) = 2log(n), so f(n) = Omega(g(n))
+- c. log(n) < n => log(log(n)) < log(n), so f(n) = O(g(n))
+- d. since (log(n))^2 lower than n, so **f(n) = Omega(g(n))**
+- e. f(n) = Omega(g(n))
+- f. f(n) = Theta(g(n))
+- g. f(n) = O(g(n))
+- h. f(n) = O(g(n))
 
 [(Back to top)](#table-of-contents)
