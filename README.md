@@ -79,6 +79,7 @@ def merge(A, lower, mid, upper):
 - **Note 1**: Exponential > (dominates) polynomial > (dominates) logarithmic
   - For example: `n*log(n)` = `O(n^(1.5)) = O(n*sqrt(n))`, since log is growth slower than sqrt(n), so `n*log(n)` will be upper bounded by `n*sqrt(n)`
   - Generalize: `n*log(n)` = `O(n^(k))` for any k > 0
+- **Note 2**: n! = O(n^n)
 <img width="620" alt="Screenshot 2021-09-09 at 14 56 21" src="https://user-images.githubusercontent.com/64508435/132637675-0cc9eb14-91cc-4500-9549-fb8a45c69a8e.png">
 
 ### 3.2.2. Lower Bound (Omega) Notation
