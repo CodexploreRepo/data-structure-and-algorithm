@@ -20,7 +20,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
   - [3.1. Advantage vs Disadvantage of Linked List](#31-advantage-vs-disadvantage-of-linked-list) 
   - [3.2. Other Linked List Variants](#32-other-linked-list-variants)
   - [3.3. Arrays vs Linked List](#33-arrays-vs-linked-list)
-
+- [4. Stacks, Queues and Deques](#4-stacks-queues-and-qeques)
 
 # Part A. Algorithm
 # 1. Recursion
@@ -191,9 +191,9 @@ Array is a continuous chunks of memory. Computer registers:
 ## 3.3. Arrays vs Linked List 
 <p align="center"><img width="500" alt="Screenshot 2021-09-12 at 22 13 43" src="https://user-images.githubusercontent.com/64508435/132991388-634a7e19-c5f1-4db6-a24e-57a3d62f014d.png"></p>
 
-- Lef(): Linked List O(n) as need to travel from Head to next not me
-- Insert() and Delete(): for Array O(n) as need to shift anything when insert or delete a cell
+- `Lef()`: Linked List O(n) as need to travel from Head to next not me
+- `Insert()` and `Delete()`: for Array O(n) as need to shift anything when insert or delete a cell
 
-
+# 4. Stacks Queues and Deques
 
 [(Back to top)](#table-of-contents)
