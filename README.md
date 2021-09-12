@@ -14,6 +14,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
   - [3.3. Recurrence](#33-recurrence)
 - [Part B - Data Structure](#part-b-data-structure)
 - [1. What is Data Structure](#1-what-is-data-structure)
+  - [1.1. Abstract Data Type ](#11-abstract-data-type) 
 
 
 # Part A. Algorithm
@@ -140,6 +141,17 @@ def merge(A, lower, mid, upper):
 
 
 # Part B. Data Structure
+- ADTs: designing abstractions
+- Data Structures: concrete implementations
 # 1. What is Data Structure
-
+- Data Structures are ways to store and organize of data to facilitate efficient
+  – Access(Read)
+  – Modification(Write)
+## 1.1. Abstract Data Type 
+- An Abstract Data Type (ADT) is a **mathematical models** of the data structures (DS is implemenetation), which defines
+  – Types of data stored
+  – Operations that should be supported (For ex: design DS easily to insert and delete)
+  – Parameters for the operations
+  
+  
 [(Back to top)](#table-of-contents)
