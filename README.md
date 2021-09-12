@@ -20,7 +20,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
   - [3.1. Advantage vs Disadvantage of Linked List](#31-advantage-vs-disadvantage-of-linked-list) 
   - [3.2. Other Linked List Variants](#32-other-linked-list-variants)
   - [3.3. Arrays vs Linked List](#33-arrays-vs-linked-list)
-- [4. Stacks, Queues and Deques](#4-stacks-queues-and-qeques)
+- [4. Stacks, Queues and Deques](#4-stacks-queues-and-deques)
 
 # Part A. Algorithm
 # 1. Recursion
