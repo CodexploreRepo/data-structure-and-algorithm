@@ -160,13 +160,15 @@ def merge(A, lower, mid, upper):
 
 # 2. Arrays
 Array is a continuous chunks of memory. Computer registers:
-- **Starting Address**: 0x8600 (0x is prefix for hexadecimal)
+- **Starting Address**: 0x8600 (0x is prefix for hexadecimal). Address of nth cell =  `starting addr + index*size_data_type`
 - **Data Type**: of values stored in the cells
 - **Size**: How many cells are there
+ ![image](https://user-images.githubusercontent.com/64508435/132990483-59c0b12e-54ff-414f-81c4-3b9b7f33600b.png)
 
 [(Back to top)](#table-of-contents)
 
 # 3. Linked List
-
+- Node, is a data structure, consists of a value and a pointer. 
+- Computer registers: head
 
 [(Back to top)](#table-of-contents)
