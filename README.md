@@ -17,6 +17,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
   - [1.1. Abstract Data Type ](#11-abstract-data-type) 
 - [2. Arrays](#2-arrays)
 - [3. Linked List](#3-linked-list)
+  - [3.1. Advantage vs Disadvantage of Linked List](#31-advantage-vs-disadvantage-of-linked-list) 
 
 # Part A. Algorithm
 # 1. Recursion
@@ -160,7 +161,7 @@ def merge(A, lower, mid, upper):
 
 # 2. Arrays
 Array is a continuous chunks of memory. Computer registers:
-- **Starting Address**: 0x8600 (0x is prefix for hexadecimal). Address of nth cell =  `starting addr + index*size_data_type`
+- **Starting Address**: 0x8600 (0x is prefix for hexadecimal). Address of nth cell =  `starting addr + index*sizeOf(data_type)`
 - **Data Type**: of values stored in the cells
 - **Size**: How many cells are there
  ![image](https://user-images.githubusercontent.com/64508435/132990483-59c0b12e-54ff-414f-81c4-3b9b7f33600b.png)
@@ -168,7 +169,15 @@ Array is a continuous chunks of memory. Computer registers:
 [(Back to top)](#table-of-contents)
 
 # 3. Linked List
-- Node, is a data structure, consists of a value and a pointer. 
-- Computer registers: head
+- **Node**, is a data structure, consists of a value and a pointer to the next node
+- **Linked List** is the parent of data structure of node
+- Computer registers: head of the Linked List
+![image](https://user-images.githubusercontent.com/64508435/132990576-9539acc7-b28f-4bdd-af34-51fe9c408b63.png)
 
+## 3.1. Advantage vs Disadvantage of Linked List
+- Advantage: Easy to expand
+- Disadvantage:
+  - (1) Space: Half of space is wasted on pointer as need to store address of next value (modern computer's address is 8 bytes)
+  - (2) Slow to retrieve: as need to jump here and there in the memory (Array you can continuously search and retrieve, say 30th element = starting addr + 30x4 - O(1))
+ 
 [(Back to top)](#table-of-contents)
