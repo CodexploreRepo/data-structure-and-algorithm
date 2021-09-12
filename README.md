@@ -13,7 +13,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
   - [3.2. Asymptotic Order of Growth](#32-asymptotic-order-of-growth)
   - [3.3. Recurrence](#33-recurrence)
 - [Part B - Data Structure](#part-b-data-structure)
-- [5. What is Data Structure](#1-what-is-data-structure)
+- [5. What is Data Structure](#5-what-is-data-structure)
 
 
 # Part A. Algorithm
