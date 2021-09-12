@@ -15,6 +15,8 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 - [Part B - Data Structure](#part-b-data-structure)
 - [1. What is Data Structure](#1-what-is-data-structure)
   - [1.1. Abstract Data Type ](#11-abstract-data-type) 
+- [2. Array](#2-arrays)
+
 
 
 # Part A. Algorithm
@@ -156,3 +158,6 @@ def merge(A, lower, mid, upper):
   - Parameters for the operations
   
 [(Back to top)](#table-of-contents)
+
+# 2. Arrays
+
