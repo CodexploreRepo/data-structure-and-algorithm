@@ -18,6 +18,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 - [2. Arrays](#2-arrays)
 - [3. Linked List](#3-linked-list)
   - [3.1. Advantage vs Disadvantage of Linked List](#31-advantage-vs-disadvantage-of-linked-list) 
+  - [3.2. Other Linked List Variants](#32-other-linked-list-variants)
 
 # Part A. Algorithm
 # 1. Recursion
@@ -180,4 +181,14 @@ Array is a continuous chunks of memory. Computer registers:
   - (1) Space: Half of space is wasted on pointer as need to store address of next value (modern computer's address is 8 bytes)
   - (2) Slow to retrieve: as need to jump here and there in the memory (Array you can continuously search and retrieve, say 30th element = starting addr + 30x4 - O(1))
  
+## 3.2. Other Linked List Variants
+- **Circular Linked List**:  a linked list where all nodes are connected to form a circle. There is no NULL at the end.
+- **Doubly Linked List**: usually use both Head & Tail for reversing the list, as Tail will be another Head of the list from the other direction.
+<p align="center"><img width="471" alt="Screenshot 2021-09-12 at 22 13 43" src="https://user-images.githubusercontent.com/64508435/132990979-94d48484-a45d-4cdf-81d2-7ce75cb7ae5e.png"></p>
+
+
+
+
+
+
 [(Back to top)](#table-of-contents)
