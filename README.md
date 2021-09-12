@@ -12,6 +12,9 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
   - [3.1. Types of Analysis](#31-types-of-analysis) 
   - [3.2. Asymptotic Order of Growth](#32-asymptotic-order-of-growth)
   - [3.3. Recurrence](#33-recurrence)
+- [Part B - Data Structure](#part-b-data-structure)
+- [1. What is Data Structure](#1-what-is-data-structure)
+
 
 # Part A. Algorithm
 # 1. Recursion
@@ -132,5 +135,11 @@ def merge(A, lower, mid, upper):
   &nbsp; &nbsp; &nbsp; &nbsp;
   <img src="https://user-images.githubusercontent.com/64508435/132659695-3c2c14c2-7edd-4109-b8e9-b4cde4cc19d0.jpg" width="45%">
 </p>
+
+[(Back to top)](#table-of-contents)
+
+
+# Part B - Data Structure
+# 1. What is Data Strucutre
 
 [(Back to top)](#table-of-contents)
