@@ -139,7 +139,7 @@ def merge(A, lower, mid, upper):
 [(Back to top)](#table-of-contents)
 
 
-# Part B - Data Structure
+# Part B. Data Structure
 # 1. What is Data Strucutre
 
 [(Back to top)](#table-of-contents)
