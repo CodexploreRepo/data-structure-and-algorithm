@@ -19,6 +19,8 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 - [3. Linked List](#3-linked-list)
   - [3.1. Advantage vs Disadvantage of Linked List](#31-advantage-vs-disadvantage-of-linked-list) 
   - [3.2. Other Linked List Variants](#32-other-linked-list-variants)
+  - [3.3. Arrays vs Linked List](#33-arrays-vs-linked-list)
+
 
 # Part A. Algorithm
 # 1. Recursion
@@ -186,8 +188,11 @@ Array is a continuous chunks of memory. Computer registers:
 - **Doubly Linked List**: usually use both Head & Tail for reversing the list, as Tail will be another Head of the list from the other direction.
 <p align="center"><img width="471" alt="Screenshot 2021-09-12 at 22 13 43" src="https://user-images.githubusercontent.com/64508435/132990979-94d48484-a45d-4cdf-81d2-7ce75cb7ae5e.png"></p>
 
+## 3.3. Arrays vs Linked List 
+<p align="center">![image](https://user-images.githubusercontent.com/64508435/132991093-d4f3c056-93ff-4ebb-866b-6e4d93917a8e.png)</p>
 
-
+- Lef(): Linked List O(n) as need to travel from Head to next not me
+- Insert() and Delete(): for Array O(n) as need to shift anything when insert or delete a cell
 
 
 
