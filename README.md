@@ -166,7 +166,7 @@ Array is a continuous chunks of memory. Computer registers:
 
 [(Back to top)](#table-of-contents)
 
-# 3. Linked 
+# 3. Linked List
 
 
 [(Back to top)](#table-of-contents)
