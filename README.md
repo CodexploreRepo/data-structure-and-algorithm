@@ -15,9 +15,8 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 - [Part B - Data Structure](#part-b-data-structure)
 - [1. What is Data Structure](#1-what-is-data-structure)
   - [1.1. Abstract Data Type ](#11-abstract-data-type) 
-- [2. Array](#2-arrays)
-
-
+- [2. Arrays](#2-arrays)
+- [3. Linked List](#3-linked-list)
 
 # Part A. Algorithm
 # 1. Recursion
@@ -160,4 +159,14 @@ def merge(A, lower, mid, upper):
 [(Back to top)](#table-of-contents)
 
 # 2. Arrays
+Array is a continuous chunks of memory. Computer registers:
+- **Starting Address**: 0x8600 (0x is prefix for hexadecimal)
+- **Data Type**: of values stored in the cells
+- **Size**: How many cells are there
 
+[(Back to top)](#table-of-contents)
+
+# 3. Linked 
+
+
+[(Back to top)](#table-of-contents)
