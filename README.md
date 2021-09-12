@@ -189,7 +189,7 @@ Array is a continuous chunks of memory. Computer registers:
 <p align="center"><img width="471" alt="Screenshot 2021-09-12 at 22 13 43" src="https://user-images.githubusercontent.com/64508435/132990979-94d48484-a45d-4cdf-81d2-7ce75cb7ae5e.png"></p>
 
 ## 3.3. Arrays vs Linked List 
-<p align="center"><img width="471" alt="Screenshot 2021-09-12 at 22 13 43" src="hhttps://user-images.githubusercontent.com/64508435/132991093-d4f3c056-93ff-4ebb-866b-6e4d93917a8e.png"></p>
+<p align="center"><img width="500" alt="Screenshot 2021-09-12 at 22 13 43" src="https://user-images.githubusercontent.com/64508435/132991388-634a7e19-c5f1-4db6-a24e-57a3d62f014d.png"></p>
 
 - Lef(): Linked List O(n) as need to travel from Head to next not me
 - Insert() and Delete(): for Array O(n) as need to shift anything when insert or delete a cell
