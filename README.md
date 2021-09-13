@@ -22,7 +22,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
   - [3.3. Arrays vs Linked List](#33-arrays-vs-linked-list)
 - [4. Stacks, Queues and Deques](#4-stacks-queues-and-deques)
   - [4.1. ADT Design for Stacks, Queues, and Deques](#41-adt-design-for-stacks-queues-and-deques) 
-  - [4.2. Stacks Queues and Deques Implementation using Linked List](#42-stacks-queues-and-qeques-implementation-using-linked-list)
+  - [4.2. Stacks Queues and Deques Implementation using Linked List](#42-stacks-queues-and-deques-implementation-using-linked-list)
 - [5. Dynamic Arrays](#5-dynamic-arrays)
 
 
@@ -209,6 +209,24 @@ Array is a continuous chunks of memory. Computer registers:
 - **Queues**: Singly Linked List with `Head` & `Tail`
 - **Deques**: Doubly Linked List with `Head` & `Tail`
 
+[(Back to top)](#table-of-contents)
+
 # 5. Dynamic Arrays
-  
+- **Dynamic Arrays**: a linked list of arrays
+  - Which Level ? (i.e: which array): `Array_Index = (pos + 1).bit_length - 1 = h`
+  - Which Cell ? (at the particular Array index): `Cell_Index = pos - array_index = pos - (2**h - 1)`
+  - For example: pos = 5 &#8594; pos + 1 = 6 = (110) &#8594; bit_len(110) = 3 &#8594; Array_Index = bit_len(110) - 1 = 2. 
+    - Therefore, the element @ pos = 5 at 2nd array_index, and the cell index = 5 - (2**2-1) = 2. 
+
+```Python
+def __translate(self, pos):
+    h = (pos + 1).bit_length() - 1
+    return h, pos + 1 – 2 ** h
+```
+
+<p align="center"><img height="300" alt="Screenshot 2021-09-13 at 14 36 43" src="https://user-images.githubusercontent.com/64508435/133039495-5d272ebc-37de-4266-91ff-cfc9f90ce519.jpg"></p>
+ 
+
+
+
 [(Back to top)](#table-of-contents)
