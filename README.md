@@ -244,6 +244,6 @@ def grow(curr_size):
 
 - **Access(i) = O(log(n))**: Since we first we need to travel at most log(n), which is max level of arrays from **5.1.2. Number of Arrays**, then O(1) to access the horizontal position within that array level.
 - **Append(i) = O(log(n))**: As we will need to traverse to the last array by log(n) then O(1) to the last position. 
-- **Delete & Insert = O(n)**: We need to shift any one
+- **Delete & Insert = O(n)**: We need to shift anyone
 
 [(Back to top)](#table-of-contents)
