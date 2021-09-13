@@ -24,7 +24,8 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
   - [4.1. ADT Design for Stacks, Queues, and Deques](#41-adt-design-for-stacks-queues-and-deques) 
   - [4.2. Stacks Queues and Deques Implementation using Linked List](#42-stacks-queues-and-deques-implementation-using-linked-list)
 - [5. Dynamic Arrays](#5-dynamic-arrays)
-
+- [6. Tree](#6-tree)
+  - [6.1. Binary Tree](#61-binary-tree) 
 
 # Part A. Algorithm
 # 1. Recursion
@@ -245,5 +246,31 @@ def grow(curr_size):
 - **Access(i) = O(log(n))**: Since we first we need to travel at most log(n), which is max level of arrays from **5.1.2. Number of Arrays**, then O(1) to access the horizontal position within that array level.
 - **Append(i) = O(log(n))**: As we will need to traverse to the last array by log(n) then O(1) to the last position. 
 - **Delete & Insert = O(n)**: We need to shift anyone
+
+[(Back to top)](#table-of-contents)
+
+# 6. Tree
+- **Tree**: is made up of a single node r (called the `root`) connected to disjoint sets of nodes (called subtrees of r)
+- **Internal Node**: A node with at least one child
+- **Leaf Node**: A node with no children
+
+#### Level & Heights
+- **Level of a Node**:
+  - If Root &#8594; Level 0
+  - If not Root &#8594; Level of Node = Level of Parent + 1
+- **Height of the Tree**: maximum level of its nodes
+<p align="center"><img height="150" alt="Screenshot 2021-09-13 at 17 49 55" src="https://user-images.githubusercontent.com/64508435/133063070-bdec5b78-b5f7-4c0a-a646-ce4de7d5dd5d.png"></p>
+
+## 6.1. Binary Tree
+
+<img width="800" alt="Screenshot 2021-09-13 at 17 54 50" src="https://user-images.githubusercontent.com/64508435/133063816-f8800df5-8fe0-4f15-b3a9-76eee34fa442.png">
+
+### 6.1.1. Full Binary Tree vs Complete Binary Tree
+- **Full Binary Tree**: Either empty or A node with both left and right subtrees being full binary trees of the same height
+  - **# of Nodes** of a full binary tree of height h:  `2^(h) - 1`
+<p align="center"><img width="370" alt="Screenshot 2021-09-13 at 18 02 13" src="https://user-images.githubusercontent.com/64508435/133064905-9cbe5430-68da-4274-8ced-6f12c24e13ed.png"></p>
+
+- **Complete Binary Tree**: Left-justified Tree
+<p><img width="360" alt="Screenshot 2021-09-13 at 18 02 43" src="https://user-images.githubusercontent.com/64508435/133064954-c07a3416-703d-4439-b970-1d9f1ceb1ef7.png"></p>
 
 [(Back to top)](#table-of-contents)
