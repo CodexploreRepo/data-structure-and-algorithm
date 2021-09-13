@@ -22,6 +22,9 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
   - [3.3. Arrays vs Linked List](#33-arrays-vs-linked-list)
 - [4. Stacks, Queues and Deques](#4-stacks-queues-and-deques)
   - [4.1. ADT Design for Stacks, Queues, and Deques](#41-adt-design-for-stacks-queues-and-deques) 
+  - [4.2. Stacks Queues and Deques Implementation using Linked List](#42-stacks-queues-and-qeques-implementation-using-linked-list)
+- [5. Dynamic Arrays](#5-dynamic-arrays)
+
 
 # Part A. Algorithm
 # 1. Recursion
@@ -197,4 +200,15 @@ Array is a continuous chunks of memory. Computer registers:
 
 # 4. Stacks Queues and Deques
 ## 4.1. ADT Design for Stacks Queues and Deques
+- Deques: Since we have 2 ends, so we can enqueue & deque from both the front and back
+
+<p align="center"><img height="300" alt="Screenshot 2021-09-13 at 14 36 43" src="https://user-images.githubusercontent.com/64508435/133035310-89179a0e-417b-4167-bf2f-9444f556f065.png"></p>
+
+## 4.2. Stacks Queues and Deques Implementation using Linked List
+- **Stacks**: Singly Linked List with `Head`
+- **Queues**: Singly Linked List with `Head` & `Tail`
+- **Deques**: Doubly Linked List with `Head` & `Tail`
+
+# 5. Dynamic Arrays
+  
 [(Back to top)](#table-of-contents)
