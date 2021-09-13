@@ -212,7 +212,8 @@ Array is a continuous chunks of memory. Computer registers:
 [(Back to top)](#table-of-contents)
 
 # 5. Dynamic Arrays
-- **Dynamic Arrays**: a linked list of arrays
+## 5.1. Dynamic Array Properties
+- **5.1.1. Dynamic Arrays**: a linked list of arrays
   - Which Level ? (i.e: which array): `Array_Index = (pos + 1).bit_length - 1 = h`
   - Which Cell ? (at the particular Array index): `Cell_Index = pos - array_index = pos - (2**h - 1)`
   - For example: pos = 5 &#8594; pos + 1 = 6 = (110) &#8594; bit_len(110) = 3 &#8594; Array_Index = bit_len(110) - 1 = 2. 
@@ -225,8 +226,24 @@ def __translate(self, pos):
 ```
 
 <p align="center"><img height="300" alt="Screenshot 2021-09-13 at 14 36 43" src="https://user-images.githubusercontent.com/64508435/133039495-5d272ebc-37de-4266-91ff-cfc9f90ce519.jpg"></p>
- 
 
+- **5.1.2. Number of Arrays**: `# of arrays = log(capcity + 1)`
+  - Capacity = 1 &#8594; 1 array
+  - Capacity = 3 &#8594; 2 arrays
+  - Capacity = 7 &#8594; 3 arrays
 
+- **5.1.3. Dynamic Arrays in Python**: In Python, the capacity grows ~1/8 of the current size
+```Python
+def grow(curr_size):
+    new_allocated = (curr_size >> 3) + (3 if curr_size < 9 else 6)
+    return curr_size + new_allocated
+```
+
+## 5.2. Arrays vs Linked Lists vs Dynamic Arrays
+<p align="center"><img height="400" src="https://user-images.githubusercontent.com/64508435/133053164-79040b05-a313-4c8f-a754-77b2aad677b0.jpg"></p>
+
+- **Access(i) = O(log(n))**: Since we first we need to travel at most log(n), which is max level of arrays from **5.1.2. Number of Arrays**, then O(1) to access the horizontal position within that array level.
+- **Append(i) = O(log(n))**: As we will need to traverse to the last array by log(n) then O(1) to the last position. 
+- **Delete & Insert = O(n)**: We need to shift any one
 
 [(Back to top)](#table-of-contents)
