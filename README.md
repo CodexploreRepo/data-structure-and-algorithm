@@ -27,6 +27,8 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 - [6. Tree](#6-tree)
   - [6.1. Binary Tree](#61-binary-tree) 
 - [7. Heaps](#7-Heaps)
+  - [7.1. Heap Representation](#71-heap-representation) 
+  - [7.2. Heap Operations](#72-heap-operations)
 
 
 # Part A. Algorithm
@@ -277,6 +279,8 @@ def grow(curr_size):
   -  A complete binary tree has at most one node with only one child.
 <p align="center"><img width="360" alt="Screenshot 2021-09-13 at 18 02 43" src="https://user-images.githubusercontent.com/64508435/133064954-c07a3416-703d-4439-b970-1d9f1ceb1ef7.png"></p>
 
+[(Back to top)](#table-of-contents)
+
 # 7. Heaps
 <i>definition.</i> A <b>binary heap</b> is a **complete binary tree** with the following binary heap property:
 - (1) if the key at a node is greater than or equal to the key of its parent, we call it a <b>min-heap</b>.
@@ -294,7 +298,10 @@ Given a key at position `i`:
 
 <p align="center"><img width="450" alt="Screenshot 2021-09-14 at 14 56 28" src="https://user-images.githubusercontent.com/64508435/133210030-3107509a-01ff-47fc-8229-fb5eaf4faa22.png"></p>
 
-
+## 7.2. Heap Operations
+- `heapify`: convert an arbitrary list to a list that satisfies max-heap property
+- `insert`: insert an element into the list without violating the max-heap property
+- `pop`: retrieve the maximum element of the list
 
 
 [(Back to top)](#table-of-contents)
