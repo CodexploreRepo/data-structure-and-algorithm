@@ -271,7 +271,7 @@ def grow(curr_size):
 
 ### 6.1.1. Full Binary Tree vs Complete Binary Tree
 - **Full Binary Tree**: Either empty or A node with both left and right subtrees being full binary trees of the same height
-  - **# of Nodes** of a full binary tree of height h:  `2^(h) - 1`
+  - **# of Nodes** of a full binary tree of height h:  `2^(h+1) - 1`
 <p align="center"><img width="370" alt="Screenshot 2021-09-13 at 18 02 13" src="https://user-images.githubusercontent.com/64508435/133064905-9cbe5430-68da-4274-8ced-6f12c24e13ed.png"></p>
 
 - **Complete Binary Tree**: Left-justified Tree
@@ -286,6 +286,10 @@ def grow(curr_size):
 - (1) if the key at a node is greater than or equal to the key of its parent, we call it a <b>min-heap</b>.
 - (2) if the key at a node is smaller than or equal to the key of its parent, we call it a <b>max-heap</b>.
 
+Since Heap is is a **complete binary tree**, therefore:
+- **# of Internal Nodes** = `floor(n/2)` or `n//2`
+- **# of Leafs** = `# of internal nodes` or `# of internal nodes + 1`
+
 ## 7.1. Heap Representation
 - A heap can be represented by a list with indices **starting from 1**.
 - <b><i>example.</i></b> A max-heap in the previous example can be represented by a list `[None, 6, 5, 3, 4, 2, 1]`.
@@ -298,10 +302,43 @@ Given a key at position `i`:
 
 <p align="center"><img width="450" alt="Screenshot 2021-09-14 at 14 56 28" src="https://user-images.githubusercontent.com/64508435/133210030-3107509a-01ff-47fc-8229-fb5eaf4faa22.png"></p>
 
+
 ## 7.2. Heap Operations
-- `heapify`: convert an arbitrary list to a list that satisfies max-heap property
-- `insert`: insert an element into the list without violating the max-heap property
-- `pop`: retrieve the maximum element of the list
+- `heapify`: convert an arbitrary list &#8594 a list that satisfies max-heap property. For ex: `[None, 1, 2, 3]` &#8594 `[None, 3, 2, 1]`
+- `insert`: insert an element into the list without violating the max-heap property.
+- `pop`: retrieve the maximum element of the list.
 
-
+### 7.2.1. Heapify
+- **Step 1**: Start from the last internal node
+  - For a heap of size `n`, there are exactly `n//2` internal node, so we can start checking the max-heap property from the last internal node, with index `n//2` to the root node (index 1).
+ ```Python
+ def heapify (self):
+    for i in range (self.__size // 2, 0, -1):
+        self.__heapify_at(i)
+ ```
+- **Step 2**: Execute  <b>heapify_at(i)</b> for all the internal nodes
+  - <b>heapify_at(i)</b> function does is to make sure, every sub-heap rooted at element with position i satisfies the heap property, i.e., the key at the root is not smaller than any other keys in the sub-heap.
+  -  <b>try_swap</b> function: if the child key is greater than the parent key, we swap the two keys, and return true for the success of swap action. Otherwise, it is false. The heapify will be notified by the returned true or false, and decide if it is necessary to heapify the sub-heap rooted at the child, since the key has changed smaller.
+  ```Python
+  def __heapify_at (self, i):
+    if 2*i > self.__size: #Base case: There is no left or right child, i.e: it is the leaf node now
+        return
+    elif 2*i == self.__size: #Case 1: internal node has only child, i.e: this left child (2*i) at the end of the list
+        if self.__try_swap(i, 2*i):
+            __heapify_at(2*i) 
+    elif self.__content[2*i] > self.__content[2*i+1]: #Case 2.1: internal node has 2 child & left child is larger
+        if self.__try_swap(i, 2*i): 
+            __heapify_at(2*i) #Swap i with its left child and perform heapify_at(its_left_child)
+    else: #Case 2.2: internal node has 2 child &  right child is larger
+        if self.__try_swap(i, 2*i+1):
+            __heapify_at(2*i+1) #Swap i with its right child and perform heapify_at(its_right_child)
+  ```
+  ```Python
+  def __try_swap (self, i, j):
+    if self.__content[j] > self.__content[i]:
+        self.__content[i], self.__content[j] = self.__content[j], self.__content[i]
+        return True
+    else:
+        return False
+  ```
 [(Back to top)](#table-of-contents)
