@@ -323,7 +323,7 @@ Since Heap is is a **complete binary tree**, therefore:
 - `pop`: retrieve the maximum element of the list.
 
 ### 7.2.1. Heapify
-- Time Complexity of Heapify: `O(n)`
+- Time Complexity of Heapify: `O(n)` (See Proof Below)
 - Time Complexity of Heapify_at(i): `O(log(n))` since worst case, we need to shift down from root to leaf = all levels (h = log(n)) 
 <p align="center"><img height="350" alt="Screenshot 2021-09-14 at 14 56 28" src="https://user-images.githubusercontent.com/64508435/133222065-32456143-c209-433f-8a2f-625c1a53ea9e.jpg"></p>
 
@@ -359,6 +359,10 @@ Since Heap is is a **complete binary tree**, therefore:
         self.__content[i], self.__content[j] = self.__content[j], self.__content[i] #if parent < child, need to swap
         return True
   ```
+  
+#### Proof Time Complexity of Heapify is O(n)
+<p align="center"><img height="350" alt="Screenshot 2021-09-14 at 14 56 28" src="https://user-images.githubusercontent.com/64508435/133271150-3d1f9b3d-2f6e-4db7-b58e-bae6d43eb681.jpg"></p>
+
 ### 7.2.2. Insertion
 - Time Complexity of Insertion: `O(log(n))` since worst case, we need to shift up from left to root = all levels (h = log(n))
 - <b>insert</b> is to append a new element at the end of the list. 
