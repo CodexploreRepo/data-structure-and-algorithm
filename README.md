@@ -290,7 +290,7 @@ Given a key at position `i`:
 - Position of the left child: `2*i`
 - Position of the right child: `2*i + 1`
 - Position of the parent: `i//2`
-  - <b><i>example.</i></b> i = 4, value = 17, parent = i//2 Left C: `2*i`, Right C: `2*i+ 1`
+  - <b><i>example.</i></b> i = 4, value = 17 &#8594; parent = `i//2` Left Child = `2*i`, Right Child = `2*i+ 1`
 
 <p align="center"><img width="450" alt="Screenshot 2021-09-14 at 14 56 28" src="https://user-images.githubusercontent.com/64508435/133210030-3107509a-01ff-47fc-8229-fb5eaf4faa22.png"></p>
 
