@@ -287,19 +287,31 @@ def grow(curr_size):
 - (1) if the key at a node is greater than or equal to the key of its parent, we call it a <b>min-heap</b>.
 - (2) if the key at a node is smaller than or equal to the key of its parent, we call it a <b>max-heap</b>.
 
-Since Heap is is a **complete binary tree**, therefore:
-- **# of Internal Nodes** = `floor(n/2)` or `n//2`
-- **# of Leafs** = `# of internal nodes` or `# of internal nodes + 1`
 
 ## 7.1. Heap Representation
 - A heap can be represented by a list with indices **starting from 1**.
 - <b><i>example.</i></b> A max-heap in the previous example can be represented by a list `[None, 6, 5, 3, 4, 2, 1]`.
 
+### Parents, Child
 Given a key at position `i`:
 - Position of the left child: `2*i`
 - Position of the right child: `2*i + 1`
 - Position of the parent: `i//2`
   - <b><i>example.</i></b> i = 4, value = 17 &#8594; parent = `i//2` Left Child = `2*i`, Right Child = `2*i+ 1`
+
+### Height of Heap
+- **# of Internal Nodes** = `floor(log(n)) + 1`
+- if heap has 1 node it's height will be 1
+- if heap has from 2 to 3 nodes it's height will be 2
+- if heap has from 4 to 7 nodes it's height will be 3
+- ...
+- if heap has from 2^i to 2^(i+1) - 1 nodes it's height will be i
+
+
+### Internal Nodes vs Leafs
+Since Heap is is a **complete binary tree**, therefore:
+- **# of Internal Nodes** = `floor(n/2)` or `n//2`
+- **# of Leafs** = `# of internal nodes` or `# of internal nodes + 1`
 
 <p align="center"><img width="450" alt="Screenshot 2021-09-14 at 14 56 28" src="https://user-images.githubusercontent.com/64508435/133210030-3107509a-01ff-47fc-8229-fb5eaf4faa22.png"></p>
 
