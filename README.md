@@ -310,6 +310,10 @@ Given a key at position `i`:
 - `pop`: retrieve the maximum element of the list.
 
 ### 7.2.1. Heapify
+- Time Complexity of Heapify: O(n)
+- Time Complexity of Heapify_at(i): O(log(n)) since worst case, we need to shift down from root to leaf = all levels (h = log(n)) 
+<p align="center"><img height="350" alt="Screenshot 2021-09-14 at 14 56 28" src="https://user-images.githubusercontent.com/64508435/133222065-32456143-c209-433f-8a2f-625c1a53ea9e.jpg"></p>
+
 - **Step 1**: Start from the last internal node
   - For a heap of size `n`, there are exactly `n//2` internal node, so we can start checking the max-heap property from the last internal node, with index `n//2` to the root node (index 1).
  ```Python
