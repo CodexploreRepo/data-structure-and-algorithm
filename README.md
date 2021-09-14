@@ -26,6 +26,8 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 - [5. Dynamic Arrays](#5-dynamic-arrays)
 - [6. Tree](#6-tree)
   - [6.1. Binary Tree](#61-binary-tree) 
+- [7. Heaps](#7-Heaps)
+
 
 # Part A. Algorithm
 # 1. Recursion
@@ -262,7 +264,7 @@ def grow(curr_size):
 <p align="center"><img height="150" alt="Screenshot 2021-09-13 at 17 49 55" src="https://user-images.githubusercontent.com/64508435/133063070-bdec5b78-b5f7-4c0a-a646-ce4de7d5dd5d.png"></p>
 
 ## 6.1. Binary Tree
-
+- An empty tree or a node with at most 2 branches
 <img width="800" alt="Screenshot 2021-09-13 at 17 54 50" src="https://user-images.githubusercontent.com/64508435/133063816-f8800df5-8fe0-4f15-b3a9-76eee34fa442.png">
 
 ### 6.1.1. Full Binary Tree vs Complete Binary Tree
@@ -271,6 +273,27 @@ def grow(curr_size):
 <p align="center"><img width="370" alt="Screenshot 2021-09-13 at 18 02 13" src="https://user-images.githubusercontent.com/64508435/133064905-9cbe5430-68da-4274-8ced-6f12c24e13ed.png"></p>
 
 - **Complete Binary Tree**: Left-justified Tree
-<p><img width="360" alt="Screenshot 2021-09-13 at 18 02 43" src="https://user-images.githubusercontent.com/64508435/133064954-c07a3416-703d-4439-b970-1d9f1ceb1ef7.png"></p>
+  -  A completely filled tree on all levels except possibly the lowest level, which is filled from the left. 
+  -  A complete binary tree has at most one node with only one child.
+<p align="center"><img width="360" alt="Screenshot 2021-09-13 at 18 02 43" src="https://user-images.githubusercontent.com/64508435/133064954-c07a3416-703d-4439-b970-1d9f1ceb1ef7.png"></p>
+
+# 7. Heaps
+<i>definition.</i> A <b>binary heap</b> is a **complete binary tree** with the following binary heap property:
+- (1) if the key at a node is greater than or equal to the key of its parent, we call it a <b>min-heap</b>.
+- (2) if the key at a node is smaller than or equal to the key of its parent, we call it a <b>max-heap</b>.
+
+## 7.1. Heap Representation
+- A heap can be represented by a list with indices **starting from 1**.
+- <b><i>example.</i></b> A max-heap in the previous example can be represented by a list [None, 6, 5, 3, 4, 2, 1].
+
+Given a key at position `i`
+– Position of the left child: `2*i`
+– Position of the right child: `2*i + 1`
+– Position of the parent: `i//2`
+
+<p align="center"><img width="450" alt="Screenshot 2021-09-14 at 14 56 28" src="https://user-images.githubusercontent.com/64508435/133210030-3107509a-01ff-47fc-8229-fb5eaf4faa22.png"></p>
+
+
+
 
 [(Back to top)](#table-of-contents)
