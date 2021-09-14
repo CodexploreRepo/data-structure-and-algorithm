@@ -29,6 +29,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 - [7. Heaps](#7-Heaps)
   - [7.1. Heap Representation](#71-heap-representation) 
   - [7.2. Heap Operations](#72-heap-operations)
+    - [7.2.1. Heapify](#721-heapify)  
 
 
 # Part A. Algorithm
@@ -334,11 +335,11 @@ Given a key at position `i`:
             __heapify_at(2*i+1) #Swap i with its right child and perform heapify_at(its_right_child)
   ```
   ```Python
-  def __try_swap (self, i, j):
-    if self.__content[j] > self.__content[i]:
-        self.__content[i], self.__content[j] = self.__content[j], self.__content[i]
-        return True
-    else:
+  def __try_swap(self, i,j):
+    if self.__content[i] >= self.__content[j]: #if value_at_i > value_at_j, dont need to swap as Parent > its child
         return False
+    else:
+        self.__content[i], self.__content[j] = self.__content[j], self.__content[i] #if parent < child, need to swap
+        return True
   ```
 [(Back to top)](#table-of-contents)
