@@ -30,7 +30,8 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
   - [7.1. Heap Representation](#71-heap-representation) 
   - [7.2. Heap Operations](#72-heap-operations)
     - [7.2.1. Heapify](#721-heapify)  
-
+    - [7.2.2. Insertion](#722-insertion)
+    - [7.2.3. Pop](#723-pop)  
 
 # Part A. Algorithm
 # 1. Recursion
@@ -292,14 +293,14 @@ def grow(curr_size):
 - A heap can be represented by a list with indices **starting from 1**.
 - <b><i>example.</i></b> A max-heap in the previous example can be represented by a list `[None, 6, 5, 3, 4, 2, 1]`.
 
-### Parents, Child
+#### Finding Parent & Child
 Given a key at position `i`:
 - Position of the left child: `2*i`
 - Position of the right child: `2*i + 1`
 - Position of the parent: `i//2`
   - <b><i>example.</i></b> i = 4, value = 17 &#8594; parent = `i//2` Left Child = `2*i`, Right Child = `2*i+ 1`
 
-### Height of Heap
+#### Height of Heap
 - **# of Internal Nodes** = `floor(log(n)) + 1`
 - if heap has 1 node it's height will be 1
 - if heap has from 2 to 3 nodes it's height will be 2
@@ -308,7 +309,7 @@ Given a key at position `i`:
 - if heap has from 2^i to 2^(i+1) - 1 nodes it's height will be i
 
 
-### Internal Nodes vs Leafs
+#### Internal Nodes vs Leafs
 Since Heap is is a **complete binary tree**, therefore:
 - **# of Internal Nodes** = `floor(n/2)` or `n//2`
 - **# of Leafs** = `# of internal nodes` or `# of internal nodes + 1`
@@ -322,8 +323,8 @@ Since Heap is is a **complete binary tree**, therefore:
 - `pop`: retrieve the maximum element of the list.
 
 ### 7.2.1. Heapify
-- Time Complexity of Heapify: O(n)
-- Time Complexity of Heapify_at(i): O(log(n)) since worst case, we need to shift down from root to leaf = all levels (h = log(n)) 
+- Time Complexity of Heapify: `O(n)`
+- Time Complexity of Heapify_at(i): `O(log(n))` since worst case, we need to shift down from root to leaf = all levels (h = log(n)) 
 <p align="center"><img height="350" alt="Screenshot 2021-09-14 at 14 56 28" src="https://user-images.githubusercontent.com/64508435/133222065-32456143-c209-433f-8a2f-625c1a53ea9e.jpg"></p>
 
 - **Step 1**: Start from the last internal node
@@ -358,4 +359,38 @@ Since Heap is is a **complete binary tree**, therefore:
         self.__content[i], self.__content[j] = self.__content[j], self.__content[i] #if parent < child, need to swap
         return True
   ```
+### 7.2.2. Insertion
+- Time Complexity of Insertion: `O(log(n))` since worst case, we need to shift up from left to root = all levels (h = log(n))
+- <b>insert</b> is to append a new element at the end of the list. 
+- After we inserted this new element, we have to check if it is larger than its parent, 
+  - if yes, we swap it with the parent, until the next parent is larger. 
+  - The <b>try_swap</b> function is used here to break the loop when the parent contains a larger key.
+```Python
+def insert (self, k):
+    self.__size += 1
+    i = self.__size
+    self.__content[i] = k
+    while i > 1 and self.__try_swap(i // 2, i):
+        i = i // 2
+```
+
+### 7.2.3. Pop
+- Time Complexity of Insertion: `O(log(n))` as same as T(heapify_at(root))
+- <b>pop</b> is to return the maximum key in the heap, which is contained in the root of the heap, at index 1. 
+- However, we cannot leave the heap without its root. 
+- So the last element of the heap is now put at the root, and 
+- this is followed by <b>heapify_at</b> to maintain the heap property.
+
+```Python
+def pop (self):
+    if self.__size == 0:
+        return None
+    else:
+        k = self.__content[1]
+        self.__content[1], self.__content[self.__size] = self.__content[self.__size], None
+        self.__size -= 1
+        self.__heapify_at(1)
+        return k
+```
+
 [(Back to top)](#table-of-contents)
