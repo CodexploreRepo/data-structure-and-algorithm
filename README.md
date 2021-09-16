@@ -318,7 +318,7 @@ Since Heap is is a **complete binary tree**, therefore:
 
 
 ## 7.2. Heap Operations
-- `heapify`: convert an arbitrary list &#8594 a list that satisfies max-heap property. For ex: `[None, 1, 2, 3]` &#8594; `[None, 3, 2, 1]`
+- `heapify`: convert an arbitrary list &#8594; a list that satisfies max-heap property. For ex: `[None, 1, 2, 3]` &#8594; `[None, 3, 2, 1]`
 - `insert`: insert an element into the list without violating the max-heap property.
 - `pop`: retrieve the maximum element of the list.
 
