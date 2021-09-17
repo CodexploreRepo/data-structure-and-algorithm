@@ -26,6 +26,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 - [5. Dynamic Arrays](#5-dynamic-arrays)
 - [6. Tree](#6-tree)
   - [6.1. Binary Tree](#61-binary-tree) 
+  - [6.2. Traverse A Tree](#62-traverse-a-tree)
 - [7. Heaps](#7-Heaps)
   - [7.1. Heap Representation](#71-heap-representation) 
   - [7.2. Heap Operations](#72-heap-operations)
@@ -259,6 +260,7 @@ def grow(curr_size):
 - **Tree**: is made up of a single node r (called the `root`) connected to disjoint sets of nodes (called subtrees of r)
 - **Internal Node**: A node with at least one child
 - **Leaf Node**: A node with no children
+- From graph view, a tree can also be defined as a directed *acyclic graph* which has `N` nodes and `N-1` edges.
 
 #### Level & Heights
 - **Level of a Node**:
@@ -281,7 +283,21 @@ def grow(curr_size):
   -  A complete binary tree has at most one node with only one child.
 <p align="center"><img width="360" alt="Screenshot 2021-09-13 at 18 02 43" src="https://user-images.githubusercontent.com/64508435/133064954-c07a3416-703d-4439-b970-1d9f1ceb1ef7.png"></p>
 
+## 6.2. Traverse A Tree
+- **Traversal Type**
+  - `Pre-Order`: Root - Left - Right
+  - `In-Order` : Left - Root - Right
+  - `Post-Order` : Left - Right - Root
+    - Note 1: Delete nodes in a tree, deletion process will be in post-order. That is to say, when you delete a node, you will delete its left child and its right child before you delete the node itself. 
+    - Note 2: Post-order is widely use in mathematical expression. 
+      -  original expression using the inorder traversal. However, it is not easy for a program to handle this expression since you have to check the priorities of operations. 
+      -  If you handle this tree in postorder, you can easily handle the expression using a stack. Each time when you meet a operator, you can just pop 2 elements from the stack, calculate the result and push the result back into the stack. 
+![IMG_0012](https://user-images.githubusercontent.com/64508435/133863125-adebc932-f5a5-4cca-a0ff-f60b5143f77f.jpg)
+
+
 [(Back to top)](#table-of-contents)
+
+
 
 # 7. Heaps
 <i>definition.</i> A <b>binary heap</b> is a **complete binary tree** with the following binary heap property:
