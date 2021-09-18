@@ -27,6 +27,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 - [6. Tree](#6-tree)
   - [6.1. Binary Tree](#61-binary-tree) 
   - [6.2. Traverse A Tree](#62-traverse-a-tree)
+  - [6.3. Level-order Traversal](#63-level-order-traversal)
 - [7. Heaps](#7-Heaps)
   - [7.1. Heap Representation](#71-heap-representation) 
   - [7.2. Heap Operations](#72-heap-operations)
@@ -287,6 +288,18 @@ def grow(curr_size):
 - **Traversal Type**
   - `Pre-Order`: Root - Left - Right
   - `In-Order` : Left - Root - Right
+  ```Python
+  class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        res = []
+        self.dfs_inorder(root, res)
+        return res
+    def dfs_inorder(self, root, res):
+        if (root):
+            self.dfs_inorder(root.left, res)
+            res.append(root.val)
+            self.dfs_inorder(root.right, res)
+  ```
   - `Post-Order` : Left - Right - Root
     - Note 1: Delete nodes in a tree, deletion process will be in post-order. That is to say, when you delete a node, you will delete its left child and its right child before you delete the node itself. 
     - Note 2: Post-order is widely use in mathematical expression. 
@@ -294,6 +307,29 @@ def grow(curr_size):
       -  If you handle this tree in postorder, you can easily handle the expression using a stack. Each time when you meet a operator, you can just pop 2 elements from the stack, calculate the result and push the result back into the stack. 
 ![IMG_0012](https://user-images.githubusercontent.com/64508435/133863125-adebc932-f5a5-4cca-a0ff-f60b5143f77f.jpg)
 
+## 6.3. Level-order Traversal
+- `Breadth-First Search` is an algorithm is to traverse the tree level by level.
+- We will use a queue to help us to do BFS.
+  ```Python
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        res = []
+        if (root):
+            queue = [root]
+            while(len(queue) > 0):
+                #in order to keep track on Level, we will based on len of queue
+                size, cur_level = len(queue), []
+                #at level 0, size_level_0 = 1
+                #at level 1, size_level_2 = 2
+                for _ in range(size):
+                    cur_node = queue.pop(0)
+                    cur_level.append(cur_node.val)
+                    if (cur_node.left):
+                        queue.append(cur_node.left)
+                    if (cur_node.right):
+                        queue.append(cur_node.right)
+                res.append(cur_level)
+        return res
+  ```
 
 [(Back to top)](#table-of-contents)
 
