@@ -451,7 +451,7 @@ def pop (self):
 ```
 
 ## 7.3. Heap Advantage
-Question:  for  a priority queue, where does the saving come from using heap extract and insert instead of merge sort?
+Question: For a priority queue, where does the saving come from using heap extract and insert instead of merge sort?
 - Since priority queue problem is to extract the maximum
 - Using heap, we can use **heapify**, which take `O(n)`, to maintain the max heap, say `10 9 7 8 4 5 3` (&#8594; this is *partially sorted order*) &#8594; then we can extract the maximum `10`.
 - Meanwhile, if using **merge sort**, which will take `O(nlogn)`, to maintain *totally sorted order*, say `10 9 8 7 5 4 3` &#8594; then we can extract the maximum `10`.
