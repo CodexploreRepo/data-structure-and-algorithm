@@ -371,10 +371,10 @@ class Solution:
 ### 6.4.3. BST - Deletion
 <p align="center"><img width="720" alt="Screenshot 2021-09-23 at 23 40 44" src="https://user-images.githubusercontent.com/64508435/134540702-d7f72f26-6644-438b-a8ae-007c93c6b137.png"></p>
 
-- First, traverse it until root.val == key.
-- Case 0: node do not have any children, like 1, 8, 11, 14, 6 or 18: then we just delete it and nothing else to do here.
-- Case 1: node has left children, but do not have right, for example 3 or 20. In this case we can just delete this node and put connection betweeen its parent and its children: for example for 3, we put connection 5->1 and for 20 we put connection 17->18. Note, that the property of BST will be fulfilled, because for parent all left subtree will be less than its value and nothing will change for others nodes.
-- Case 2: node has both children, like 12, 5, 7, 9 or 15. In this case we can not just delete it. 
+- First, traverse it until `root.val == key`.
+- **Case 0**: node do not have any children, like 1, 8, 11, 14, 6 or 18: then we just delete it and nothing else to do here.
+- **Case 1**: node has left children, but do not have right, for example 3 or 20. In this case we can just delete this node and put connection betweeen its parent and its children: for example for 3, we put connection 5->1 and for 20 we put connection 17->18. Note, that the property of BST will be fulfilled, because for parent all left subtree will be less than its value and nothing will change for others nodes.
+- **Case 2**: node has both children, like 12, 5, 7, 9 or 15. In this case we can not just delete it. 
   - Let us consider node 5. We want to find succesor of this node: the node with next value, to do this we need to go one time to the right and then as left as possible. 
   - For node 5 our succesor will be 6: we go 5->7->6. 
   - How we can delete node 5 now? We swap nodes 5 and 6 (or just put value 6 to 5) and then we need to deal with new tree, where we need to delete node which I put in square. 
