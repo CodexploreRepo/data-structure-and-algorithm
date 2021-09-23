@@ -28,6 +28,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
   - [6.1. Binary Tree](#61-binary-tree) 
   - [6.2. Traverse A Tree](#62-traverse-a-tree)
   - [6.3. Level-order Traversal](#63-level-order-traversal)
+  - [6.4. Binary Search Tree](#64-binary-search-tree)
 - [7. Heaps](#7-Heaps)
   - [7.1. Heap Representation](#71-heap-representation) 
   - [7.2. Heap Operations](#72-heap-operations)
@@ -331,6 +332,42 @@ def grow(curr_size):
                 res.append(cur_level)
         return res
   ```
+
+## 6.4. Binary Search Tree
+- A `binary search tree` (BST), a special form of a binary tree, satisfies the binary search property:
+  - The value in each node must be greater than (or equal to) any values stored in its left subtree.
+  - The value in each node must be less than (or equal to) any values stored in its right subtree.
+- **inorder traversal** in BST will be in **ascending** order
+- BSTs support three main operations: search, insertion and deletion.
+
+### 6.4.1. BST - Search
+```Python
+class Solution:
+    def searchBST(self, root, val):
+        if (root):
+            if root.val == val:
+                return root
+            elif root.val > val:
+                return self.searchBST(root.left, val)
+            elif root.val < val:
+                return self.searchBST(root.right, val)
+        else:
+            return None
+```
+
+### 6.4.2. BST - Insertion
+```Python
+class Solution:
+    def insertIntoBST(self, root, val):
+        if not root:
+            return TreeNode(val) #Base Case: Null Node, then return a new Node with "val"
+        if root.val < val:
+            root.right = self.insertIntoBST(root.right, val) #If root.right is Null, so TreeNode(val) will be returned from Base Case & assign to root.right
+        elif root.val > val:
+            root.left = self.insertIntoBST(root.left, val) #If root.left is Null, so TreeNode(val) will be returned from Base Case & assign to root.left
+        return root #return root after insertion
+```
+
 
 [(Back to top)](#table-of-contents)
 
