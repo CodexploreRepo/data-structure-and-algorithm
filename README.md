@@ -368,6 +368,49 @@ class Solution:
         return root #return root after insertion
 ```
 
+### 6.4.3. BST - Deletion
+<p align="center"><img width="720" alt="Screenshot 2021-09-23 at 23 40 44" src="https://user-images.githubusercontent.com/64508435/134540702-d7f72f26-6644-438b-a8ae-007c93c6b137.png"></p>
+
+- First, traverse it until root.val == key.
+- Case 0: node do not have any children, like 1, 8, 11, 14, 6 or 18: then we just delete it and nothing else to do here.
+- Case 1: node has left children, but do not have right, for example 3 or 20. In this case we can just delete this node and put connection betweeen its parent and its children: for example for 3, we put connection 5->1 and for 20 we put connection 17->18. Note, that the property of BST will be fulfilled, because for parent all left subtree will be less than its value and nothing will change for others nodes.
+- Case 2: node has both children, like 12, 5, 7, 9 or 15. In this case we can not just delete it. 
+  - Let us consider node 5. We want to find succesor of this node: the node with next value, to do this we need to go one time to the right and then as left as possible. 
+  - For node 5 our succesor will be 6: we go 5->7->6. 
+  - How we can delete node 5 now? We swap nodes 5 and 6 (or just put value 6 to 5) and then we need to deal with new tree, where we need to delete node which I put in square. 
+  - How to do it? Just understand, that this node do not have left children, so it is either Case 1 or Case 3, which we already can solve.
+
+```Python
+class Solution:
+    def deleteNode(self, root, key):
+        if not root: return None #Base Case
+        if root.val > key:
+            root.left = self.deleteNode(root.left, key)
+        elif root.val < key:
+            root.right = self.deleteNode(root.right, key)
+        else: #root.val = key
+            #Case 0: node has no child
+            if not root.left and not root.right: return None 
+            
+            #Case 1: node has 1 child
+            if not root.left: return root.right #if no left child, so right child will replace root
+            if not root.right: return root.left #if no right child, so left child will replace root
+            
+            #Case 2: node has 2 child, will replace root with its successor
+            if root.left and root.right:
+                #root's succssor = left-most child of the root's right sub-tree
+                temp = root.right
+                while(temp.left):
+                    temp = temp.left
+                #replace root with it successor's val 
+                root.val = temp.val
+                #delete root's succssor: Since root's succssor will have no left child
+                #so delete it will fall under case 0, or case 1 only
+                root.right = self.deleteNode(root.right, temp.val)
+                
+        return root          
+```
+
 
 [(Back to top)](#table-of-contents)
 
