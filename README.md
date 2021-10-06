@@ -12,6 +12,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
   - [3.1. Types of Analysis](#31-types-of-analysis) 
   - [3.2. Asymptotic Order of Growth](#32-asymptotic-order-of-growth)
   - [3.3. Recurrence](#33-recurrence)
+- [4. BFS and DFS](#4-bfs-and-dfs)
 - [Part B - Data Structure](#part-b-data-structure)
 - [1. What is Data Structure](#1-what-is-data-structure)
   - [1.1. Abstract Data Type ](#11-abstract-data-type) 
@@ -159,6 +160,43 @@ def merge(A, lower, mid, upper):
 
 [(Back to top)](#table-of-contents)
 
+# 4. BFS and DFS
+## 4.1. BFS
+- **BFS**: needs to use `queue` as processing order of the nodes in First-in-First-out (FIFO) manner.
+- **Application**: do `traversal` or find the `shortest path from the root node to the target node`
+  - Round 1: we process the root node
+  - Round 2: we process the nodes next to the root node 
+  - Round 3: we process the nodes which are two steps from the root node; so on and so forth.
+  - Similar to tree's level-order traversal, the nodes closer to the root node will be traversed earlier.
+  - If a **target** node  is added to the queue in the `kth` round, the *length of the shortest path* between the root node and **target** node is exactly `k`. 
+  - That is to say, you are already in the shortest path the first time you find the target node.
+<p align="center"><img height="280" alt="Screenshot 2021-10-06 at 22 46 16" src="https://user-images.githubusercontent.com/64508435/136227680-d5db434d-35f4-4dfb-8557-5eff2fba8dd9.png"></p>
+
+```Python
+def BFS(root, target) {
+    queue = dequeue()  #store all nodes which are waiting to be processed
+    step = 0           #number of steps neeeded from root to current node
+    queue.append(root) #append root to queue
+
+    while queue: 
+        step = step + 1
+        #iterate the nodes which are already in the queue
+        size = len(queue)
+        for _ in range(size):
+            cur_node = queue.popleft() #dequeue the first node in queue
+            if cur_node == target: return step #return step if cur is target
+            #else: continue to add the neighbors of cur_node to queue
+            for (Node next : the neighbors of cur_node):
+                add next to queue
+            }
+        }
+    }
+    return -1 #there is no path from root to target
+}
+
+```
+
+[(Back to top)](#table-of-contents)
 
 # Part B. Data Structure
 - ADTs: designing abstractions
