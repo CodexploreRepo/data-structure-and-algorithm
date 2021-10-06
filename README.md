@@ -26,6 +26,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 - [4. Stacks, Queues and Deques](#4-stacks-queues-and-deques)
   - [4.1. ADT Design for Stacks, Queues, and Deques](#41-adt-design-for-stacks-queues-and-deques) 
   - [4.2. Stacks Queues and Deques Implementation using Linked List](#42-stacks-queues-and-deques-implementation-using-linked-list)
+  - [4.3. Queue](#43-queue)
 - [5. Dynamic Arrays](#5-dynamic-arrays)
 - [6. Tree](#6-tree)
   - [6.1. Binary Tree](#61-binary-tree) 
@@ -289,6 +290,26 @@ Array is a continuous chunks of memory. Computer registers:
 - **Queues**: Singly Linked List with `Head` & `Tail`
 - **Deques**: Doubly Linked List with `Head` & `Tail`
 
+## 4.3. Queue
+- **Application**: [BFS](#41-bfs)
+### 4.3.1. Queue Implementation
+- To implement a **queue using dynamic array** and an index pointing to the `head` of the queue.
+  - Drawback: With the movement of the `head` pointer when dequeue, more and more space is wasted 
+    - In this example, when we dequeue(5), the head pointer move to the second position, but then array[0] pos will never be used 
+    - <p align="center"><img height="100" alt="Screenshot 2021-09-13 at 14 36 43" src="https://user-images.githubusercontent.com/64508435/136234975-23a637b1-887e-4109-a55a-819db5c37b02.png"></p>
+- Solution: `Circular queue` Specifically, we may use a **fixed-size array** and **two pointers** to indicate the starting position and the ending position. And the goal is to reuse the wasted storage we mentioned previously.
+  - Example: [Design Circular Queue](https://github.com/CodexploreRepo/leetcode/blob/master/solution/622_Design_Circular_Queue.py) Please refer the link for [Circular Queue animation]( https://leetcode.com/explore/learn/card/queue-stack/228/first-in-first-out-data-structure/1396/)
+
+### 4.3.2. Queue Usage in Python
+- Queue in Python: using list with **dequeue** `list.pop(0)` (But requiring O(n) as need to shift all elements) time and **enqueue** `list.append(item)`
+- Queue with Built-in Function:
+```Python
+from collections import deque
+q = deque() # Initializing a queue
+q.append('a') # Adding elements to a queue
+# Removing elements from a queue - only O(1) in compare with using List to implement Queue
+q.popleft()
+```
 [(Back to top)](#table-of-contents)
 
 # 5. Dynamic Arrays
