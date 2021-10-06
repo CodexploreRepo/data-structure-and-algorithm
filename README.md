@@ -165,7 +165,7 @@ def merge(A, lower, mid, upper):
 
 # 4. BFS and DFS
 ## 4.1. BFS
-- **BFS**: needs to use `queue` as processing order of the nodes in First-in-First-out (FIFO) manner.
+- **BFS**: needs to use [queue](#43-queue) as processing order of the nodes in First-in-First-out (FIFO) manner.
 - **Application**: do [traversal](#63-level-order-traversal) or find the `shortest path from the root node to the target node`
   - Round 1: we process the root node
   - Round 2: we process the nodes next to the root node 
