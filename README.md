@@ -163,7 +163,7 @@ def merge(A, lower, mid, upper):
 # 4. BFS and DFS
 ## 4.1. BFS
 - **BFS**: needs to use `queue` as processing order of the nodes in First-in-First-out (FIFO) manner.
-- **Application**: do `traversal` or find the `shortest path from the root node to the target node`
+- **Application**: do [traversal](#63-level-order-traversal) or find the `shortest path from the root node to the target node`
   - Round 1: we process the root node
   - Round 2: we process the nodes next to the root node 
   - Round 3: we process the nodes which are two steps from the root node; so on and so forth.
@@ -173,7 +173,8 @@ def merge(A, lower, mid, upper):
 <p align="center"><img height="280" alt="Screenshot 2021-10-06 at 22 46 16" src="https://user-images.githubusercontent.com/64508435/136227680-d5db434d-35f4-4dfb-8557-5eff2fba8dd9.png"></p>
 
 ### 4.1.1. BFS Template 1
-- After each outer while loop, we are one step farther from the root node. The variable `step` indicates the distance from the root node and the current node we are visiting.
+- After each outer while loop, we are one step farther from the root node. 
+- Variable `step` indicates the distance from the root node and the current node we are visiting.
 ```Python
 def BFS(root, target):
     queue = dequeue()  #store all nodes which are waiting to be processed
@@ -196,7 +197,7 @@ def BFS(root, target):
 ### 4.1.1. BFS Template 2
 - It is important to make sure that we **never visit a node twice**. 
 - Otherwise, we might get stuck in an infinite loop, e.g. in graph with cycle. 
-- If so, we can add a hash set or other method to mark the node is visted to the code above to solve this problem. For example: [Leetcode: Number of Islands](./solution/200_Number_of_Islands.py)
+- If so, we can add a hash set or other method to mark the node is visted to the code above to solve this problem. For example: [Leetcode: Number of Islands](https://github.com/CodexploreRepo/leetcode/blob/master/solution/200_Number_of_Islands.py)
 
 ```Python
 def BFS(root, target):
@@ -220,32 +221,6 @@ def BFS(root, target):
                 
     return -1 #there is no path from root to target
 ```
-int BFS(Node root, Node target) {
-    Queue<Node> queue;  // store all nodes which are waiting to be processed
-    Set<Node> visited;  // store all the nodes that we've visited
-    int step = 0;       // number of steps neeeded from root to current node
-    // initialize
-    add root to queue;
-    add root to visited;
-    // BFS
-    while (queue is not empty) {
-        step = step + 1;
-        // iterate the nodes which are already in the queue
-        int size = queue.size();
-        for (int i = 0; i < size; ++i) {
-            Node cur = the first node in queue;
-            return step if cur is target;
-            for (Node next : the neighbors of cur) {
-                if (next is not in used) {
-                    add next to queue;
-                    add next to visited;
-                }
-            }
-            remove the first node from queue;
-        }
-    }
-    return -1;          // there is no path from root to target
-}
 
 [(Back to top)](#table-of-contents)
 
