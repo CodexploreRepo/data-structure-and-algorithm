@@ -175,6 +175,9 @@ def merge(A, lower, mid, upper):
 ### 4.1.1. BFS Template 1
 - After each outer while loop, we are one step farther from the root node. 
 - Variable `step` indicates the distance from the root node and the current node we are visiting.
+- `Template 1` not need keep the visited hash set becauese:
+  - There is no cycle, for example, in tree traversal
+  - You do want to add the node to the queue multiple times.
 ```Python
 def BFS(root, target):
     queue = dequeue()  #store all nodes which are waiting to be processed
