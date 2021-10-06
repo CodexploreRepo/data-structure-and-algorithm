@@ -172,8 +172,10 @@ def merge(A, lower, mid, upper):
   - That is to say, you are already in the shortest path the first time you find the target node.
 <p align="center"><img height="280" alt="Screenshot 2021-10-06 at 22 46 16" src="https://user-images.githubusercontent.com/64508435/136227680-d5db434d-35f4-4dfb-8557-5eff2fba8dd9.png"></p>
 
+### 4.1.1. BFS Template 1
+- After each outer while loop, we are one step farther from the root node. The variable `step` indicates the distance from the root node and the current node we are visiting.
 ```Python
-def BFS(root, target) {
+def BFS(root, target):
     queue = dequeue()  #store all nodes which are waiting to be processed
     step = 0           #number of steps neeeded from root to current node
     queue.append(root) #append root to queue
@@ -188,13 +190,62 @@ def BFS(root, target) {
             #else: continue to add the neighbors of cur_node to queue
             for (Node next : the neighbors of cur_node):
                 add next to queue
+
+    return -1 #there is no path from root to target
+```
+### 4.1.1. BFS Template 2
+- It is important to make sure that we **never visit a node twice**. 
+- Otherwise, we might get stuck in an infinite loop, e.g. in graph with cycle. 
+- If so, we can add a hash set or other method to mark the node is visted to the code above to solve this problem. For example: [Leetcode: Number of Islands](./solution/200_Number_of_Islands.py)
+
+```Python
+def BFS(root, target):
+    queue = dequeue()  #store all nodes which are waiting to be processed
+    visited = []       #store all the nodes that we've visited
+    step = 0           #number of steps neeeded from root to current node
+    queue.append(root) #append root to queue
+
+    while queue: 
+        step = step + 1
+        #iterate the nodes which are already in the queue
+        size = len(queue)
+        for _ in range(size):
+            cur_node = queue.popleft() #dequeue the first node in queue
+            if cur_node == target: return step #return step if cur is target
+            #else: continue to add the neighbors of cur_node to queue
+            for neighbour in cur_node.neighbour:
+                if neighbour not in visited: #ensure that the neighbor is not visited
+                    visited.append(neighbour)
+                    queue.append(neighbour)
+                
+    return -1 #there is no path from root to target
+```
+int BFS(Node root, Node target) {
+    Queue<Node> queue;  // store all nodes which are waiting to be processed
+    Set<Node> visited;  // store all the nodes that we've visited
+    int step = 0;       // number of steps neeeded from root to current node
+    // initialize
+    add root to queue;
+    add root to visited;
+    // BFS
+    while (queue is not empty) {
+        step = step + 1;
+        // iterate the nodes which are already in the queue
+        int size = queue.size();
+        for (int i = 0; i < size; ++i) {
+            Node cur = the first node in queue;
+            return step if cur is target;
+            for (Node next : the neighbors of cur) {
+                if (next is not in used) {
+                    add next to queue;
+                    add next to visited;
+                }
             }
+            remove the first node from queue;
         }
     }
-    return -1 #there is no path from root to target
+    return -1;          // there is no path from root to target
 }
-
-```
 
 [(Back to top)](#table-of-contents)
 
