@@ -13,6 +13,8 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
   - [3.2. Asymptotic Order of Growth](#32-asymptotic-order-of-growth)
   - [3.3. Recurrence](#33-recurrence)
 - [4. BFS and DFS](#4-bfs-and-dfs)
+  - [4.1. BFS](#41-bfs) 
+  - [4.2. DFS](#42-dfs) 
 - [Part B - Data Structure](#part-b-data-structure)
 - [1. What is Data Structure](#1-what-is-data-structure)
   - [1.1. Abstract Data Type ](#11-abstract-data-type) 
