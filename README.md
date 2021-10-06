@@ -301,7 +301,7 @@ Array is a continuous chunks of memory. Computer registers:
   - Example: [Design Circular Queue](https://github.com/CodexploreRepo/leetcode/blob/master/solution/622_Design_Circular_Queue.py) Please refer the link for [Circular Queue animation]( https://leetcode.com/explore/learn/card/queue-stack/228/first-in-first-out-data-structure/1396/)
 
 ### 4.3.2. Queue Usage in Python
-- Queue in Python: using list with **dequeue** `list.pop(0)` (But requiring O(n) as need to shift all elements) time and **enqueue** `list.append(item)`
+- Queue with List: **dequeue** `list.pop(0)` (But requiring O(n) as need to shift all elements) time and **enqueue** `list.append(item)`
 - Queue with Built-in Function:
 ```Python
 from collections import deque
