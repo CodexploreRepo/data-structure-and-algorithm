@@ -208,7 +208,7 @@ def BFS(root, target):
 ```Python
 def BFS(root, target):
     queue = dequeue()  #store all nodes which are waiting to be processed
-    visited = set()       #store all the nodes that we've visited
+    visited = set()    #store all the nodes that we've visited
     step = 0           #number of steps neeeded from root to current node
     queue.append(root) #append root to queue
 
