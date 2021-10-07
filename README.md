@@ -208,7 +208,7 @@ def BFS(root, target):
 ```Python
 def BFS(root, target):
     queue = dequeue()  #store all nodes which are waiting to be processed
-    visited = []       #store all the nodes that we've visited
+    visited = set()       #store all the nodes that we've visited
     step = 0           #number of steps neeeded from root to current node
     queue.append(root) #append root to queue
 
@@ -222,7 +222,7 @@ def BFS(root, target):
             #else: continue to add the neighbors of cur_node to queue
             for neighbour in cur_node.neighbour:
                 if neighbour not in visited: #ensure that the neighbor is not visited
-                    visited.append(neighbour)
+                    visited.add(neighbour)
                     queue.append(neighbour)
                 
     return -1 #there is no path from root to target
