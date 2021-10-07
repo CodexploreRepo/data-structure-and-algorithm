@@ -201,9 +201,8 @@ def BFS(root, target):
     return -1 #there is no path from root to target
 ```
 ### 4.1.1. BFS Template 2
-- It is important to make sure that we **never visit a node twice**. 
-- Otherwise, we might get stuck in an infinite loop, e.g. in graph with cycle. 
-- If so, we can add a hash set or other method to mark the node is visted to the code above to solve this problem. For example: [Leetcode: Number of Islands](https://github.com/CodexploreRepo/leetcode/blob/master/solution/200_Number_of_Islands.py)
+- It is important to make sure that we **never visit a node twice**. Otherwise, we might get stuck in an infinite loop, e.g. in graph with cycle. 
+- Used `set`, instead of `list`, to mark the node is visted to the code above to solve this problem. For example: [Open the Lock](https://github.com/CodexploreRepo/leetcode/blob/master/solution/752_Open_the_Lock.py), [Number of Islands](https://github.com/CodexploreRepo/leetcode/blob/master/solution/200_Number_of_Islands.py), 
 
 ```Python
 def BFS(root, target):
