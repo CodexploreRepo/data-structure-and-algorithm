@@ -9,7 +9,7 @@ array = [-1,3,-2,5,-6,1]         #max_sum = 6, sub_array = [3, -2, 5]
 
 def max_subarray(nums):
     """
-    This version is to return max_sum, max_start & max_end pos
+    This version is to return max_sum of the sub-arrays
     """
     n, max_sum = len(nums), float("-inf")
     dp = [float("-inf")]*(n+1)
