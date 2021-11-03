@@ -70,7 +70,7 @@ def merge_sort(A,lower, upper):
 
 array = [-4,2,1,3,5,3,11,100,7,4,-1]
 
-merge_sort(array, 0, len(array)-1 ) #[-4, -1, 1, 2, 3, 3, 4, 5, 7, 11, 100]
+merge_sort(array, 0, len(array)-1) #[-4, -1, 1, 2, 3, 3, 4, 5, 7, 11, 100]
 ```
 - For the merge function, we will create 2 copy of `A[lower, mid]` and `A[mid+1, upper]` to `tmpL` and `tmpR` and start to sort back
 - Need to add the stopper `float("inf")` to the end of both `tmpL` and `tmpR`
