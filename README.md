@@ -635,7 +635,7 @@ Question: For a priority queue, where does the saving come from using heap extr
 [(Back to top)](#table-of-contents)
 
 # 8. Graph
-- BFS and DFS on Graph => Have to mark nodes that already searched
+- BFS and DFS on Graph vs Tree - Main Difference: have to mark nodes that already searched
 
 ## 8.1. Graph Property
 ### 8.1.1. Edge & Vertex Relationship:
