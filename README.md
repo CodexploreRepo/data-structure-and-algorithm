@@ -40,6 +40,9 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
     - [7.2.2. Insertion](#722-insertion)
     - [7.2.3. Pop](#723-pop) 
   - [7.3. Heap Advantage](#73-heap-advantage) 
+- [8. Graph](#8-graph)
+  - [8.1. Graph Property](#81-graph-property)
+
 
 # Part A. Algorithm
 # 1. Recursion
@@ -630,3 +633,21 @@ Question: For a priority queue, where does the saving come from using heap extr
 - Answer: depend on the use-case, for this use-case, we only need to maintain *partially sorted order*, so using Heap `O(n)` is Better than Merge Sort `O(nlogn)`
 
 [(Back to top)](#table-of-contents)
+
+# 8. Graph
+## 8.1. Graph Property
+### 8.1.1. Edges & Vertices Relationship:
+- **Un-directed Graph**: `n(n-1)/2` In an undirected graph, each edge is specified by its two endpoints and order doesn't matter. The number of edges is therefore the number of subsets of size 2 chosen from the set of vertices. Since the set of vertices has size n, the number of such subsets is given by the binomial coefficient C(n,2) (also known as "n choose 2"). Using the formula for binomial coefficients, C(n,2) = n(n-1)/2
+- **Directed Graph**: `n(n-1)` Each edge is specified by its start vertex and end vertex. There are n choices for the start vertex. Since there are no self-loops, there are n-1 choices for the end vertex. Multiplying these together we have n(n-1) all possible choices.
+### 8.1.2. Sparse and Dense Graph:
+- **Dense Graph**: `|E| = O(|V|^2)`
+- **Sparse**: `|E| = O(|V|)`
+
+
+
+[(Back to top)](#table-of-contents)
+
+
+
+
+
