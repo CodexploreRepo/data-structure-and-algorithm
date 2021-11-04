@@ -42,6 +42,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
   - [7.3. Heap Advantage](#73-heap-advantage) 
 - [8. Graph](#8-graph)
   - [8.1. Graph Property](#81-graph-property)
+  - [8.2. Graph Search Algorithms](#82-graph-search-algorithms)
 
 
 # Part A. Algorithm
@@ -181,7 +182,7 @@ def merge(A, lower, mid, upper):
   - That is to say, you are already in the shortest path the first time you find the target node.
 <p align="center"><img height="280" alt="Screenshot 2021-10-06 at 22 46 16" src="https://user-images.githubusercontent.com/64508435/136227680-d5db434d-35f4-4dfb-8557-5eff2fba8dd9.png"></p>
 
-### 4.1.1. BFS Template 1
+### 4.1.1. BFS Template 1 for Tree
 - After each outer while loop, we are one step farther from the root node. 
 - Variable `step` indicates the distance from the root node and the current node we are visiting.
 - `Template 1` not need keep the visited hash set becauese:
@@ -206,7 +207,7 @@ def BFS(root, target):
 
     return -1 #there is no path from root to target
 ```
-### 4.1.1. BFS Template 2
+### 4.1.1. BFS Template 2 for Graph
 - It is important to make sure that we **never visit a node twice**. Otherwise, we might get stuck in an infinite loop, e.g. in graph with cycle. 
 - Used `set`, instead of `list`, to make a `visited` set for marking the node is visted. For example: [Open the Lock](https://github.com/CodexploreRepo/leetcode/blob/master/solution/752_Open_the_Lock.py), [Number of Islands](https://github.com/CodexploreRepo/leetcode/blob/master/solution/200_Number_of_Islands.py), 
 
@@ -635,8 +636,6 @@ Question: For a priority queue, where does the saving come from using heap extr
 [(Back to top)](#table-of-contents)
 
 # 8. Graph
-- BFS and DFS on Graph vs Tree - Main Difference: have to mark nodes that already searched
-
 ## 8.1. Graph Property
 ### 8.1.1. Edge & Vertex Relationship:
 - **Un-directed Graph**: `n(n-1)/2` 
@@ -647,8 +646,12 @@ Question: For a priority queue, where does the saving come from using heap extr
 - **Dense Graph**: `|E| = O(|V|^2)`
 - **Sparse**:      `|E| = O(|V|)`
 
-
-
+## 8.2. Graph Search Algorithms
+- Main Difference (BFS and DFS on Graph (vs Tree)): **have to mark nodes that already searched**
+- Time Complexity: 
+  - Search on Tree: `O(n)` where n is number of nodes
+  - Search on Graph: `O(n+e)` where n is number of nodes; e is number of edges
+ 
 [(Back to top)](#table-of-contents)
 
 
