@@ -636,7 +636,7 @@ Question: For a priority queue, where does the saving come from using heap extr
 
 # 8. Graph
 ## 8.1. Graph Property
-### 8.1.1. Edges & Vertices Relationship:
+### 8.1.1. Edge & Vertex Relationship:
 - **Un-directed Graph**: `n(n-1)/2` 
   - In an undirected graph, each edge is specified by its two endpoints and order doesn't matter. The number of edges is therefore the number of subsets of size 2 chosen from the set of vertices. Since the set of vertices has size n, the number of such subsets is given by the binomial coefficient C(n,2) (also known as "n choose 2"). Using the formula for binomial coefficients, C(n,2) = n(n-1)/2
 - **Directed Graph**: `n(n-1)` 
