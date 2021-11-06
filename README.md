@@ -1,5 +1,6 @@
 # Algorithm Design and Implementation
 CS602-Algorithm Design and Implementation - A course from MITB Program SMU
+- Resource: [The Algorithms](https://the-algorithms.com/)
 
 # Table of contents
 - [Table of contents](#table-of-contents)
