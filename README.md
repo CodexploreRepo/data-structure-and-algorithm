@@ -49,6 +49,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 # Part A. Algorithm
 # 1. Recursion
 -  Example: Factorial, Fibonacci Number, Euclidean Algorithm, Extended Euclidean Algorithm
+-  Reverse the Linked List
 # 2. Sorting
 ## 2.1. Insertion Sort
 - Time Complexity: `O(n^2)`
