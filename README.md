@@ -5,7 +5,8 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 # Table of contents
 - [Table of contents](#table-of-contents)
 - [Part A - Algorithm](#part-a-algorithm)
-- [1. Recursion](#1-recursion) 
+- [1. Recursion](#1-recursion)
+  - [1.1. Recursion Examples](#11-recursion-examples)  
 - [2. Sorting](#2-sorting)
   - [2.1. Insertion Sort](#21-insertion-sort)
   - [2.2. Merge Sort](#22-merge-sort)
@@ -48,7 +49,8 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 
 # Part A. Algorithm
 # 1. Recursion
--  Example: Factorial, Fibonacci Number, Euclidean Algorithm, Extended Euclidean Algorithm
+## 1.1. Recursion Examples
+-  General Example: Factorial, Fibonacci Number, Euclidean Algorithm, Extended Euclidean Algorithm
 -  Reverse Example: [Reverse String](./algorithm/recursion/344_Reverse_String.py), [Reverse the Linked List](./algorithm/recursion/206_Reverse_Linked_List.py)
 # 2. Sorting
 ## 2.1. Insertion Sort
