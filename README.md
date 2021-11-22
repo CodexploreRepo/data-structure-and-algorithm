@@ -7,6 +7,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 - [Part A - Algorithm](#part-a-algorithm)
 - [1. Recursion](#1-recursion)
   - [1.1. Recursion Examples](#11-recursion-examples)  
+  - [1.2. Principle of Recursion](#12-principle-of-recursion)
 - [2. Sorting](#2-sorting)
   - [2.1. Insertion Sort](#21-insertion-sort)
   - [2.2. Merge Sort](#22-merge-sort)
@@ -52,6 +53,12 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 ## 1.1. Recursion Examples
 -  General Example: Factorial, Fibonacci Number, Euclidean Algorithm, Extended Euclidean Algorithm
 -  Reverse Example: [Reverse String](./algorithm/recursion/344_Reverse_String.py), [Reverse the Linked List](./algorithm/recursion/206_Reverse_Linked_List.py)
+
+## 1.2. Principle of Recursion
+- `Base case`:  a terminating scenario that does not use recursion to produce an answer.
+- `Recurrence Relation`: the relationship between the result of a problem and the result of its subproblems.that reduces all other cases towards the base case.
+- `Memoization`:  duplicate calculations problem that could happen with recursion. We will then propose a common technique called memoization that can be used to avoid this problem.
+
 # 2. Sorting
 ## 2.1. Insertion Sort
 - Time Complexity: `O(n^2)`
