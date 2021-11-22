@@ -49,7 +49,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 # Part A. Algorithm
 # 1. Recursion
 -  Example: Factorial, Fibonacci Number, Euclidean Algorithm, Extended Euclidean Algorithm
--  Reverse the Linked List
+-  Reverse Example: [Reverse String](./algorithm/recursion/344_Reverse_String.py), [Reverse the Linked List](./algorithm/recursion/206_Reverse_Linked_List.py)
 # 2. Sorting
 ## 2.1. Insertion Sort
 - Time Complexity: `O(n^2)`
