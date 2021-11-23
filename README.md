@@ -58,6 +58,25 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 ## 1.2. Principle of Recursion
 - `Base case`:  a terminating scenario that does not use recursion to produce an answer.
 - `Recurrence Relation`: the relationship between the result of a problem and the result of its subproblems.that reduces all other cases towards the base case.
+- **Tail Recursion**: Tail recursion is a recursion where the recursive call is the final instruction in the recursion function. And there should be only one recursive call in the function.
+  - The benefit of having tail recursion is that it could avoid the accumulation of stack overheads during the recursive calls
+  - Since in tail recursion, we know that as soon as we return from the recursive call we are going to immediately return as well, so we can skip the entire chain of recursive calls returning and return straight to the original caller. That means we don't need a call stack at all for all of the recursive calls, which saves us space.
+  ```Python
+  def sum_non_tail_recursion(ls):
+      if len(ls) == 0:
+          return 0
+
+      # not a tail recursion because it does some computation after the recursive call returned.
+      return ls[0] + sum_non_tail_recursion(ls[1:])
+
+  def sum_tail_recursion(ls, acc = 0):
+      if len(ls) == 0:
+         return acc
+
+      # this is a tail recursion because the final instruction is a recursive call.
+      return helper(ls[1:], ls[0] + acc)
+  ```
+
 - **Memoization**:  duplicate calculations problem that could happen with recursion. We will then propose a common technique called memoization that can be used to avoid this problem.
   - Cache `memo` can be passed into the function as an input param
   ```Python
@@ -78,6 +97,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
   ```
 
 ## 1.3. Complexity Analysis
+### 1.3.1. Time Complexity
 - **Execution tree**, which is a tree that is used to denote the execution flow of a recursive function in particular. 
   - Each node in the tree represents an invocation of the recursive function. Therefore, the total number of nodes in the tree corresponds to the number of recursion calls during the execution.
   - *For example*: Execution tree for the calculation of Fibonacci number f(4). 
@@ -85,6 +105,15 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
     -  With **memoization**, we save the result of Fibonacci number for each index `n`. As a result, the recursion to calculate `f(n)` would be invoked `n-1` times to calculate all the precedent numbers that it depends on. So, Time complexity for f(n) would be `O(n)`.
 
   <p align="center"><img height="250" src="https://user-images.githubusercontent.com/64508435/142988499-0f581269-54ee-4697-bdc9-b19514ef0243.png"></p>
+
+### 1.3.2. Space Complexity
+- **Two parts of the space consumption** that one should bear in mind when calculating the space complexity of a recursive algorithm: `recursion related` and `non-recursion related space`.
+#### Recursion Related Space
+- The recursion related space refers to the memory cost that is incurred directly by the recursion, i.e. the stack to keep track of recursive function calls.
+- It is due to recursion-related space consumption that sometimes one might run into a situation called `stack overflow`, where the stack allocated for a program reaches its maximum space limit and the program crashes. Therefore, when designing a recursive algorithm, one should carefully check if there is a possibility of stack overflow when the input scales up.
+
+#### Non-Recursion Related Space
+- As suggested by the name, the non-recursion related space refers to the memory space that is not directly related to recursion, which typically includes the space (normally in heap) that is allocated for the global variables.
 
 # 2. Sorting
 ## 2.1. Insertion Sort
