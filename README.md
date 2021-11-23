@@ -8,6 +8,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 - [1. Recursion](#1-recursion)
   - [1.1. Recursion Examples](#11-recursion-examples)  
   - [1.2. Principle of Recursion](#12-principle-of-recursion)
+  - [1.3. Complexity Analysis](#13-complexity-analysis)
 - [2. Sorting](#2-sorting)
   - [2.1. Insertion Sort](#21-insertion-sort)
   - [2.2. Merge Sort](#22-merge-sort)
@@ -57,7 +58,33 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 ## 1.2. Principle of Recursion
 - `Base case`:  a terminating scenario that does not use recursion to produce an answer.
 - `Recurrence Relation`: the relationship between the result of a problem and the result of its subproblems.that reduces all other cases towards the base case.
-- `Memoization`:  duplicate calculations problem that could happen with recursion. We will then propose a common technique called memoization that can be used to avoid this problem.
+- **Memoization**:  duplicate calculations problem that could happen with recursion. We will then propose a common technique called memoization that can be used to avoid this problem.
+  - Cache `memo` can be passed into the function as an input param
+  ```Python
+      def climbStairs(n, memo = {1: 1, 2:2}):
+          if n not in memo: #T(n) = T(n-1) + T(n-2)
+              memo[n] = self.climbStairs(n-1, memo) + self.climbStairs(n-2, memo) 
+          return memo[n]
+  ```
+  - Cache `memo` can also be initialized in the `__init__` class
+  ```Python
+  class Solution(object):
+    def __init__(self):
+        self.cache = {0:1, 1:1}
+    def climbStairs(self, n):
+        if n not in self.cache:
+          self.cache[n] = self.climbStairs(n-1) + self.climbStairs(n-2)
+        return self.cache[n]
+  ```
+
+## 1.3. Complexity Analysis
+- **Execution tree**, which is a tree that is used to denote the execution flow of a recursive function in particular. 
+  - Each node in the tree represents an invocation of the recursive function. Therefore, the total number of nodes in the tree corresponds to the number of recursion calls during the execution.
+  - *For example*: Execution tree for the calculation of Fibonacci number f(4). 
+    - In a full binary tree with n levels, the total number of nodes would be `2^n - 1`. So, Time complexity for f(n) would be `O(2^n)`.
+    -  With **memoization**, we save the result of Fibonacci number for each index `n`. As a result, the recursion to calculate `f(n)` would be invoked `n-1` times to calculate all the precedent numbers that it depends on. So, Time complexity for f(n) would be `O(n)`.
+
+  <p align="center"><img height="250" src="https://user-images.githubusercontent.com/64508435/142988499-0f581269-54ee-4697-bdc9-b19514ef0243.png"></p>
 
 # 2. Sorting
 ## 2.1. Insertion Sort
