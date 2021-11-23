@@ -61,6 +61,8 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 - **Tail Recursion**: Tail recursion is a recursion where the recursive call is the final instruction in the recursion function. And there should be only one recursive call in the function.
   - The benefit of having tail recursion is that it could avoid the accumulation of stack overheads during the recursive calls
   - Since in tail recursion, we know that as soon as we return from the recursive call we are going to immediately return as well, so we can skip the entire chain of recursive calls returning and return straight to the original caller. That means we don't need a call stack at all for all of the recursive calls, which saves us space.
+  - Different from the *memoization* technique, **tail recursion could optimize the space complexity of the algorithm**, by eliminating the stack overhead incurred by recursion. More importantly, **with tail recursion, one could avoid the problem of stack overflow that comes often with recursion**. 
+  - Another advantage about tail recursion is that often times it is easier to read and understand, compared to non-tail-recursion. Because there is no post-call dependency in tail recursion (i.e. the recursive call is the final action in the function), unlike non-tail-recursion. 
   ```Python
   def sum_non_tail_recursion(ls):
       if len(ls) == 0:
@@ -74,7 +76,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
          return acc
 
       # this is a tail recursion because the final instruction is a recursive call.
-      return helper(ls[1:], ls[0] + acc)
+      return sum_tail_recursion(ls[1:], ls[0] + acc)
   ```
 
 - **Memoization**:  duplicate calculations problem that could happen with recursion. We will then propose a common technique called memoization that can be used to avoid this problem.
