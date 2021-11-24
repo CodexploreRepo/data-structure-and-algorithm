@@ -9,6 +9,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
   - [1.1. Recursion Examples](#11-recursion-examples)  
   - [1.2. Principle of Recursion](#12-principle-of-recursion)
   - [1.3. Complexity Analysis](#13-complexity-analysis)
+  - [1.4. Theme of Recursion](#14-theme-of-recursion)
 - [2. Sorting](#2-sorting)
   - [2.1. Insertion Sort](#21-insertion-sort)
   - [2.2. Merge Sort](#22-merge-sort)
@@ -110,12 +111,40 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 
 ### 1.3.2. Space Complexity
 - **Two parts of the space consumption** that one should bear in mind when calculating the space complexity of a recursive algorithm: `recursion related` and `non-recursion related space`.
-#### Recursion Related Space
-- The recursion related space refers to the memory cost that is incurred directly by the recursion, i.e. the stack to keep track of recursive function calls.
-- It is due to recursion-related space consumption that sometimes one might run into a situation called `stack overflow`, where the stack allocated for a program reaches its maximum space limit and the program crashes. Therefore, when designing a recursive algorithm, one should carefully check if there is a possibility of stack overflow when the input scales up.
+  #### Recursion Related Space
+  - The recursion related space refers to the memory cost that is incurred directly by the recursion, i.e. the stack to keep track of recursive function calls.
+  - It is due to recursion-related space consumption that sometimes one might run into a situation called `stack overflow`, where the stack allocated for a program reaches its maximum space limit and the program crashes. Therefore, when designing a recursive algorithm, one should carefully check if there is a possibility of stack overflow when the input scales up.
 
-#### Non-Recursion Related Space
-- As suggested by the name, the non-recursion related space refers to the memory space that is not directly related to recursion, which typically includes the space (normally in heap) that is allocated for the global variables.
+  #### Non-Recursion Related Space
+  - As suggested by the name, the non-recursion related space refers to the memory space that is not directly related to recursion, which typically includes the space (normally in heap) that is allocated for the global variables.
+
+## 1.4. Theme of Recursion
+Theme of recursion: paradigms that are often applied together with the recursion to solve some problems.
+1. Divide and Conquer
+2. Backtracking
+
+### 1.4.1. Divide and Conquer
+- **Divide-and-conquer algorithm**: works by recursively breaking the problem down into two or more subproblems of the same or related type, until these subproblems become simple enough to be solved directly. Then one combines the results of subproblems to form the final solution.
+- Example: Merge Sort, Quick Sort
+ <p align="center"><img height="250" src="https://user-images.githubusercontent.com/64508435/143206383-50e00972-2538-4bf4-b3c5-a4a20a991a7d.png"></p>
+
+-  **Divide-and-conquer Template**: essential part of the divide and conquer is to figure out the `recurrence relationship` between the subproblems and the original problem, which subsequently defines the functions of `divide()` and `combine()`. 
+
+
+```Pyhon
+def divide_and_conquer( S ):
+    # (1). Divide the problem into a set of subproblems.
+    [S1, S2, ... Sn] = divide(S)
+
+    # (2). Solve the subproblem recursively,
+    #   obtain the results of subproblems as [R1, R2... Rn].
+    rets = [divide_and_conquer(Si) for Si in [S1, S2, ... Sn]]
+    [R1, R2,... Rn] = rets
+
+    # (3). combine the results from the subproblems.
+    #   and return the combined result.
+    return combine([R1, R2,... Rn])
+```
 
 # 2. Sorting
 ## 2.1. Insertion Sort
