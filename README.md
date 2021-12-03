@@ -125,7 +125,7 @@ Theme of recursion: paradigms that are often applied together with the recursion
 
 ### 1.4.1. Divide and Conquer
 - **Divide-and-conquer algorithm**: works by recursively breaking the problem down into two or more subproblems of the same or related type, until these subproblems become simple enough to be solved directly. Then one combines the results of subproblems to form the final solution.
-- Example: Merge Sort, Quick Sort, [Search a 2D Matrix II](./algorithm/recursion/divide-and-conquer/240_Search_a_2D_Matrix_II.py)
+- *Example*: Merge Sort, Quick Sort, [Search a 2D Matrix II](./algorithm/recursion/divide-and-conquer/240_Search_a_2D_Matrix_II.py)
  <p align="center"><img height="250" src="https://user-images.githubusercontent.com/64508435/143206383-50e00972-2538-4bf4-b3c5-a4a20a991a7d.png"></p>
 
 -  **Divide-and-conquer Template**: essential part of the divide and conquer is to figure out the `recurrence relationship` between the subproblems and the original problem, which subsequently defines the functions of `divide()` and `combine()`. 
