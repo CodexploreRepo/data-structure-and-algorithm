@@ -13,6 +13,7 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
 - [2. Sorting](#2-sorting)
   - [2.1. Insertion Sort](#21-insertion-sort)
   - [2.2. Merge Sort](#22-merge-sort)
+  - [2.3. Quick Sort](#23-quick-sort)
 - [3. Analysis of Algorithm](#3-analysis-of-algorithm)
   - [3.1. Types of Analysis](#31-types-of-analysis) 
   - [3.2. Asymptotic Order of Growth](#32-asymptotic-order-of-growth)
@@ -198,6 +199,44 @@ def merge(A, lower, mid, upper):
             A[k] = tmpR[j]
             j+=1
 ```
+## 2.3. Quick Sort
+- Depending on the pivot values, the time complexity of the quick sort algorithm can vary from best case `O(N*Log(N))` to worst case (already sorted input) `O(N^2)`.
+```Python
+def partition(A, p, r):
+    pivot = A[r]
+    i = p - 1 #track A[j] < pivot
+    for j in range(p, r):
+        if A[j] <= pivot:
+            i+=1 #grow Blue
+            A[i], A[j] = A[j], A[i]
+    #Swap A[i+1] & A[r] once done
+    A[i+1], A[r] = A[r], A[i+1]
+    return i+1
+
+def quicksort(A, p, r):
+    if p < r:
+        q = partition(A, p, r)
+        quicksort(A, p, q - 1)
+        quicksort(A, q + 1, r)
+
+quicksort(A, 0, len(A) - 1)
+```
+- In order to avoid the worst case `O(N^2)` in quick sort, we can use **Random sampling** technique, which is to pick a random pivot element.
+- On average, `randomized_quicksort` will cost `O(N*Log(N))` 
+```Python
+def randomized_partition(A, p, r):
+    i = random.randint(p, r)
+    A[i], A[r] = A[r], A[i]
+    #Swap i, which is a random pivot, to last pos (r), and then 
+    #call the standard partition
+    return partition(A, p, r)
+def randomized_quicksort(A, p, r):
+    if p < r:
+        q = randomized_partition(A, p, r)
+        randomized_quicksort(A, p, q - 1)
+        randomized_quicksort(A, q + 1, r)
+```
+
 # 3. Analysis of Algorithm
 ## 3.1. Types of Analysis
 - **Worst Case**:
