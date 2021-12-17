@@ -10,6 +10,8 @@ CS602-Algorithm Design and Implementation - A course from MITB Program SMU
   - [1.2. Principle of Recursion](#12-principle-of-recursion)
   - [1.3. Complexity Analysis](#13-complexity-analysis)
   - [1.4. Theme of Recursion](#14-theme-of-recursion)
+    - [1.4.1. Divide and Conquer](#141-divide-and-conquer)
+    - [1.4.2. Backtracking](#142-backtracking)
 - [2. Sorting](#2-sorting)
   - [2.1. Insertion Sort](#21-insertion-sort)
   - [2.2. Merge Sort](#22-merge-sort)
@@ -146,6 +148,15 @@ def divide_and_conquer( S ):
     #   and return the combined result.
     return combine([R1, R2,... Rn])
 ```
+### 1.4.2. Backtracking
+- Procedure of backtracking as the tree traversal. 
+  - Starting from the root node, one sets out to search for solutions that are located at the leaf nodes. 
+  - Each intermediate node represents a partial candidate solution that could potentially lead us to a final valid solution.
+  - At each node, we would fan out to move one step further to the final solution, i.e. we iterate the child nodes of the current node. 
+  - Once we can determine if a certain node cannot possibly lead to a valid solution, we abandon the current node and backtrack to its parent node to explore other possibilities. 
+  - It is due to this backtracking behaviour, the backtracking algorithms are often much faster than the brute-force search algorithm, since it eliminates many unnecessary exploration. 
+<p align="center"><img height="250" src="https://user-images.githubusercontent.com/64508435/146486242-4c05c004-3070-4c08-8ce7-d27186659bbf.png"></p>
+
 
 # 2. Sorting
 ## 2.1. Insertion Sort
